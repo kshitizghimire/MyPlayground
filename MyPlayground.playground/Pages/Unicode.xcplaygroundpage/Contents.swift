@@ -9,7 +9,7 @@ let family3 = "👱🏾\u{200D}👩🏽\u{200D}👧🏿\u{200D}👦🏻"
 family2.utf8.count
 
 family3.unicodeScalars.forEach { (scalar) in
-    print(scalar, separator: "",terminator: "")
+    print(scalar, separator: "",terminator: "  ->  ")
     print(String(scalar.value, radix: 16, uppercase: true))
 
 }

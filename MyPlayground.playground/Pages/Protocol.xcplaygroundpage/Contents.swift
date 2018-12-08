@@ -1,7 +1,6 @@
 //: [Previous](@previous)
 
 import Foundation
-import UIKit
 
 protocol ProtocolA {
     var propety: String { get }
