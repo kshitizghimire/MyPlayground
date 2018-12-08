@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='macos' executeOnSourceChanges='false'>
+    <pages>
+        <page name='TwoSum'/>
+        <page name='ReverseString'/>
+        <page name='ReverseInteger'/>
+        <page name='JewelsAndStones'/>
+        <page name='String'/>
+        <page name='Array'/>
+        <page name='Tree'/>
+        <page name='UnsafeSwift'/>
+        <page name='Codable'/>
+        <page name='Closure'/>
+        <page name='URLSession'/>
+        <page name='Protocol'/>
+        <page name='PassingCars'/>
+        <page name='BinaryGap'/>
+        <page name='CyclicRotation'/>
+        <page name='Queue'/>
+        <page name='Decimal'/>
+        <page name='DecimalEncoding'/>
+        <page name='ErrorHandling'/>
+        <page name='JSONSerializer'/>
+        <page name='Generics'/>
+        <page name='NetworkError'/>
+        <page name='OptionSet'/>
+        <page name='Iterator'/>
+        <page name='PatternMatchingOperator'/>
+        <page name='RawRepresentable'/>
+        <page name='Unicode'/>
+        <page name='Base64String'/>
+    </pages>
+</playground>
