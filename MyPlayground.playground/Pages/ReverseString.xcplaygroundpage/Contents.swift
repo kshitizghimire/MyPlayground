@@ -19,3 +19,12 @@ class Solution {
 let string = "some string"
 
 print(Solution().reverseString(string))
+
+
+var reversed: String = ""
+
+for c in string {
+    reversed = "\(c)\(reversed)"
+//    reversed += "\(c)"
+}
+print(reversed)
