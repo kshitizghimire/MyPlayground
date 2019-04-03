@@ -59,5 +59,12 @@ struct CacheItem {
 let cacheItem = CacheItem(item: AnyCachable("abc"), expiryDate: Date())
 let cache: [AnyCachable<String>] = [AnyCachable("Hello"), AnyCachable("World")]
 
+
+struct CacheItem2 {
+    let item: AnyCachable2<String>
+    let expiryDate: Date
+}
+
+let cacheItem2 = CacheItem2(item: AnyCachable2("abc"), expiryDate: Date())
 let cache2: [AnyCachable2<String>] = [AnyCachable2("Hello"), AnyCachable2("World")]
 
