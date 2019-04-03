@@ -34,6 +34,23 @@ class AnyCachable<T>: Cachable {
     }
 }
 
+
+class AnyCachable2<C: Cachable>: Cachable {
+    private let cachable: C
+    
+    init(_ cachable: C) {
+        self.cachable = cachable
+    }
+    
+    func encode() -> Data? {
+        return self.cachable.encode()
+    }
+    
+    func decode(_ data: Data) -> C.CacheType? {
+        return self.cachable.decode(data)
+    }
+}
+
 struct CacheItem {
     let item: AnyCachable<String>
     let expiryDate: Date
@@ -41,3 +58,6 @@ struct CacheItem {
 
 let cacheItem = CacheItem(item: AnyCachable("abc"), expiryDate: Date())
 let cache: [AnyCachable<String>] = [AnyCachable("Hello"), AnyCachable("World")]
+
+let cache2: [AnyCachable2<String>] = [AnyCachable2("Hello"), AnyCachable2("World")]
+
