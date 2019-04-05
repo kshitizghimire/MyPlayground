@@ -44,3 +44,38 @@ let data = try? encoder.encode(foo)
 print(String(data: data!, encoding: .utf8)!)
 
 
+struct DecimalStruct: Codable {
+    var val = Decimal(12.313)
+}
+
+struct DoubleStruct: Codable {
+    var val = Double(12.313)
+}
+
+let decimalData = try JSONEncoder().encode(DecimalStruct())
+print(String(data: decimalData, encoding: .utf8)!)
+
+let doubleData = try JSONEncoder().encode(DoubleStruct())
+print(String(data: doubleData, encoding: .utf8)!)
+
+let plEncoder = PropertyListEncoder()
+plEncoder.outputFormat = .xml
+let decimalXMLData = try plEncoder.encode(DecimalStruct())
+print(String(data: decimalXMLData, encoding: .utf8)!)
+
+let doubleXMLData = try plEncoder.encode(DoubleStruct())
+print(String(data: doubleXMLData, encoding: .utf8)!)
+
+var myDecimal: Decimal = 12.313
+print(myDecimal) // 12.313000000000002048
+
+var result: Decimal = 0
+NSDecimalRound(&result, &myDecimal, 3, .down)
+print(result) // 12.313
+
+MemoryLayout.size(ofValue: result)
+MemoryLayout.size(ofValue: myDecimal)
+
+
+let decimalString = Decimal(string: "12.3")
+MemoryLayout.size(ofValue: decimalString)
