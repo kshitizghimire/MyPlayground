@@ -47,5 +47,6 @@
         <page name='Fibonacci'/>
         <page name='PropertySeriializer'/>
         <page name='DecimalSerialization'/>
+        <page name='DateDecodingStrategy'/>
     </pages>
 </playground>

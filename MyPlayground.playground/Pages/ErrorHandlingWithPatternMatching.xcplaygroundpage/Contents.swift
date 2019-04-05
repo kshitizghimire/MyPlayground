@@ -2,13 +2,16 @@
 import Foundation
 
 
-enum URLError {
+enum URLError: Error {
     case notConnectedToInternet
     case networkConnectionLost
     case cannotLoadFromNetwork
 }
-enum HTTPError {
+
+enum HTTPError: Error {
     case unauthorized
+    case notFound
+    case none
 }
 
 
@@ -24,6 +27,9 @@ func handle(_ error: Error) {
     case let error as HTTPError where error == .unauthorized:
         print(error)
 
+    case HTTPError.notFound:
+        print(error)
+
     // Matching against our networking error type:
     case is HTTPError:
         print(error)
@@ -33,4 +39,10 @@ func handle(_ error: Error) {
         print(error)
     }
 }
+
+let error =  URLError.notConnectedToInternet
+handle(error)
+
+
+
 
