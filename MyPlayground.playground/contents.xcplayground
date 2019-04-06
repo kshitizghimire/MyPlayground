@@ -37,11 +37,16 @@
         <page name='MaximumDepthQueue'/>
         <page name='MinimumDepthRecursive'/>
         <page name='NoOfIsland'/>
-        <page name='NSRegularExpression'/>
+        <page name='RegularExpression'/>
         <page name='Pow'/>
         <page name='Rethrows'/>
         <page name='KeyValuePairs'/>
         <page name='SwiftVersion'/>
         <page name='TypeErasure'/>
+        <page name='ErrorHandlingWithPatternMatching'/>
+        <page name='Fibonacci'/>
+        <page name='PropertySeriializer'/>
+        <page name='DecimalSerialization'/>
+        <page name='DateDecodingStrategy'/>
     </pages>
 </playground>
