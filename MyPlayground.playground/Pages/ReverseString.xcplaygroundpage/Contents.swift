@@ -2,29 +2,22 @@
 
 class Solution {
     func reverseString(_ string: String) -> String {
-        let stringArray = Array(string)
-        
-        var index = stringArray.count - 1
-        
-        var reversedString = String()
-        
-        while index >= 0 {
-            reversedString += String(stringArray[index])
-            index -= 1
+
+        var result = Array(string)
+        var start = result.startIndex
+        var end = result.endIndex - 1
+
+        while start < end {
+            let temp = result[start]
+            result[start] = result[end]
+            result[end] = temp
+            start += 1
+            end -= 1
         }
-        return reversedString
+        return String(result)
     }
 }
 
-let string = "some string"
+let string = "some 👨‍👩‍👦‍👦 string"
 
 print(Solution().reverseString(string))
-
-
-var reversed: String = ""
-
-for c in string {
-    reversed = "\(c)\(reversed)"
-//    reversed += "\(c)"
-}
-print(reversed)
