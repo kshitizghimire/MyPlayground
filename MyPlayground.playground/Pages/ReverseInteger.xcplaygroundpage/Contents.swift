@@ -2,19 +2,24 @@
 
 import Foundation
 
-let number = 23459
 
-let string = String(number)
+class Solution {
+    func reverse(_ x: Int) -> Int {
+        var result = 0
+        var number = x
 
-var array = [String]()
+        while number != 0 {
+            let last = number % 10
+            result = (result * 10) + last
+            number = number/10
+        }
 
-for c in string.reversed() {
-    array += [String(c)]
-  
+        if result > Int32.max || result < Int32.min {
+            result = 0
+        }
+        return result
+    }
 }
 
-print(array)
-
-for str in (0...array.count-1).reversed() {
-    print(str)
-}
+let number = 123
+Solution().reverse(number)

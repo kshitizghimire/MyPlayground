@@ -29,3 +29,8 @@ default:
     
 }
 
+let a: [String] = []
+
+
+let b = a.first
+let c = a[0]
