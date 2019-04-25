@@ -27,7 +27,7 @@ let stubStudent = """
 
 
 let decoder = JSONDecoder()
-decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
+decoder.dateDecodingStrategy = .custom { decoder -> Date in
     let container = try decoder.singleValueContainer()
     let dateString = try container.decode(String.self)
     print(dateString)
@@ -35,11 +35,10 @@ decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MM-dd-yyyy"
     dateFormatter.timeZone = TimeZone.current
-    print(dateFormatter.timeZone)
 
     return dateFormatter.date(from: dateString)!
 
-})
+}
 
 do {
     let student = try decoder.decode(Student.self, from: stubStudent.data(using: .utf8)!)

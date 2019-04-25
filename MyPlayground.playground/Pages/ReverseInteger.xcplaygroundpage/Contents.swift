@@ -23,3 +23,4 @@ class Solution {
 
 let number = 123
 Solution().reverse(number)
+
