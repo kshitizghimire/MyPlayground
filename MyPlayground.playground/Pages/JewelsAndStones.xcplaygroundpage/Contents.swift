@@ -11,11 +11,9 @@ let stoneString = "aAAbbbccccccccccd"
 
 class Solution {
     
-    private var stoneDictionary: Dictionary<String,Int> = [:]
-    
     func numberOFJewels(jewel: String, stone: String) -> Int {
         
-        
+        var stoneDictionary: Dictionary<String,Int> = [:]
         
         for character in stoneString {
             let key = String(character)

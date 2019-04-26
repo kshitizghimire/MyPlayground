@@ -8,11 +8,11 @@ class Solution {
         var end = result.endIndex - 1
 
         while start < end {
-            let temp = result[start]
-            result[start] = result[end]
-            result[end] = temp
+            result.swapAt(start, end)
             start += 1
             end -= 1
+
+
         }
         return String(result)
     }
