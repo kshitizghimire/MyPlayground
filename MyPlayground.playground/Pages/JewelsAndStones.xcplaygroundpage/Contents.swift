@@ -13,10 +13,10 @@ class Solution {
     
     func numberOFJewels(jewel: String, stone: String) -> Int {
         
-        var stoneDictionary: Dictionary<String,Int> = [:]
-        
-        for character in stoneString {
-            let key = String(character)
+        var stoneDictionary = [Character: Int]()
+
+        stoneString.forEach { character in
+            let key = character
             
             if let value = stoneDictionary[key] {
                 stoneDictionary[key] = value + 1
@@ -26,8 +26,8 @@ class Solution {
         }
         
         var sum: Int = 0
-        for character in jewelString {
-            let key = String(character)
+        jewelString.forEach { character in 
+            let key = character
             if let value = stoneDictionary[key] {
                 sum = sum + value
             }
