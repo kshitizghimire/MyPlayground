@@ -1,7 +1,7 @@
 //: [Previous](@previous)
 
 import Foundation
-
+import UIKit
 //Input: J = "aA", S = "aAAbbbb"
 //Output: 3
 
@@ -13,23 +13,16 @@ class Solution {
     
     func numberOFJewels(jewel: String, stone: String) -> Int {
         
-        var stoneDictionary = [Character: Int]()
-
-        stoneString.forEach { character in
-            let key = character
-            
-            if let value = stoneDictionary[key] {
-                stoneDictionary[key] = value + 1
-            } else {
-                stoneDictionary[key] = 1
-            }
+        var sum = 0
+        var jewels: Set<Character> = []
+        
+        jewel.forEach { character in
+            jewels.insert(character)
         }
         
-        var sum: Int = 0
-        jewelString.forEach { character in 
-            let key = character
-            if let value = stoneDictionary[key] {
-                sum = sum + value
+        stone.forEach { character in
+            if jewels.contains(character) {
+                sum += 1
             }
         }
         

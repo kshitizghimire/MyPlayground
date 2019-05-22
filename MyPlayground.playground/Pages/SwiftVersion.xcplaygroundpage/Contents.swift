@@ -14,5 +14,3 @@ print("Hello, Swift 3.x")
 print("Hello, Swift 2.2")
 #endif
 
-
-let a:DictionaryLiteral<String, String>
