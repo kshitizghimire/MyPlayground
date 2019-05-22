@@ -3,14 +3,14 @@
 import Foundation
 
 class Stack {
-    private var array = [String]()
-    func push(_ value: String) {
+    private var array = [Character]()
+    func push(_ value: Character) {
         self.array.append(value)
     }
-    func pop() -> String? {
+    func pop() -> Character? {
        return self.array.popLast()
     }
-    func peek() -> String? {
+    func peek() -> Character? {
         return self.array.last
     }
     var isEmpty: Bool {
@@ -22,11 +22,10 @@ class Solution {
     func removeDuplicates(_ S: String) -> String {
         let stack = Stack()
         S.forEach { character in
-            let letter = "\(character)"
-            if stack.peek() == letter {
+            if stack.peek() == character {
                 stack.pop()
             } else {
-                stack.push(letter)
+                stack.push(character)
             }
         }
 

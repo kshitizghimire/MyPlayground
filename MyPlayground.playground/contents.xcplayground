@@ -48,6 +48,7 @@
         <page name='PropertySeriializer'/>
         <page name='DecimalSerialization'/>
         <page name='DateDecodingStrategy'/>
-        <page name='1047 Adjacent Duplicates'/>
+        <page name='1047.Adjacent Duplicates'/>
+        <page name='14.Longest Common Prefix'/>
     </pages>
 </playground>
