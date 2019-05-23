@@ -50,5 +50,6 @@
         <page name='DateDecodingStrategy'/>
         <page name='1047.Adjacent Duplicates'/>
         <page name='14.Longest Common Prefix'/>
+        <page name='20.Valid Parentheses'/>
     </pages>
 </playground>
