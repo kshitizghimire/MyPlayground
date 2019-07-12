@@ -4,62 +4,36 @@ import UIKit
 import PlaygroundSupport
 
 extension String {
-    func indices(of occurrence: String) -> [Int] {
-        var indices = [Int]()
-        var currentIndex = self.startIndex
-        while let range = self.range(of: occurrence,
-                                     range: currentIndex..<self.endIndex) {
-                                        let index = self.distance(from: self.startIndex,
-                                                                  to: range.lowerBound)
-                                        indices.append(index)
-                                        let offset = occurrence.distance(from: occurrence.startIndex,
-                                                                         to: occurrence.endIndex) - 1
-                                        guard let afterIndex = self.index(range.lowerBound,
-                                                                          offsetBy: offset,
-                                                                          limitedBy: self.endIndex) else {
-                                                                            break
-                                        }
-                                        currentIndex = self.index(after: afterIndex)
-        }
-        return indices
-    }
-
-    func ranges(of searchString: String) -> [Range<String.Index>] {
-        let indices = self.indices(of: searchString)
-        let count = searchString.count
-        return indices.map {
-            self.index(startIndex, offsetBy: $0)..<self.index(startIndex, offsetBy: $0 + count)
-        }
+    func ranges(of pattern: String) -> [NSRange] {
+        let regularExpression = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+        let matches = regularExpression?.matches(in: self, options: [], range: NSRange(string.startIndex..., in:self))
+        return matches?.compactMap { textCheckResult -> NSRange in
+            textCheckResult.range
+            } ?? []
     }
 }
 
-let string = "Don‘t fuck👩‍👩‍👧‍👧🖕 and some text‘a fuck"
-
-
+let string = "Don‘t fuck👩‍👩‍👧‍👧🖕 and some text‘a fuck!@#$%^&*()_+<>,.?/\\`ABC093456?<>?~-="
 let attributedString = NSMutableAttributedString(string: string)
-func addAttribute(for ranges: [Range<String.Index>]) {
-
+func addAttribute(for ranges: [NSRange]) {
     ranges.forEach { range in
-        let range = NSRange(range, in: string)
-        attributedString.addAttributes([NSAttributedString.Key.backgroundColor : UIColor.yellow], range: range)
+        attributedString.addAttributes([NSAttributedString.Key.backgroundColor : UIColor.red], range: range)
     }
 }
 
-
-string.indices(of: "🖕")
-addAttribute(for: string.ranges(of: "🖕"))
-string.indices(of: "fuck")
-addAttribute(for:string.ranges(of: "fuck"))
-string.indices(of: "‘")
-addAttribute(for:string.ranges(of: "‘"))
+let a = string.ranges(of: "[^a-zA-Z0-9 ]")
+let b = string.ranges(of: "\\bfuck\\b")
 
 
+addAttribute(for: a )
+addAttribute(for: b )
 
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         let label = UILabel()
+        label.numberOfLines = 0
         label.attributedText = attributedString
         label.backgroundColor = .white
         view = label
