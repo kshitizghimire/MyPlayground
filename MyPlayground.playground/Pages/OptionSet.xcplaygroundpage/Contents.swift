@@ -13,7 +13,7 @@ struct ShippingOptions: OptionSet {
 }
 
 var freeOptions: ShippingOptions = []
-type(of: freeOptions)
+print(type(of: freeOptions))
 
 ShippingOptions.self
 

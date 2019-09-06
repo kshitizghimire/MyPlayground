@@ -12,7 +12,7 @@ let result = addClosure(3, 4)
 
 class Solution: CustomDebugStringConvertible {
     var debugDescription: String {
-        return "string\(closure)"
+        return "string\(String(describing: closure))"
     }
     
     
