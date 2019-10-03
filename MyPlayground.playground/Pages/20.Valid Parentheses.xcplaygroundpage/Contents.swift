@@ -2,26 +2,19 @@
 
 import Foundation
 
-class Stack {
-    private var array = [Character]()
-    func push(_ value: Character) {
-        self.array.append(value)
-    }
-    func pop() -> Character? {
-        return self.array.popLast()
-    }
-    func peek() -> Character? {
-        return self.array.last
-    }
-    var isEmpty: Bool {
-        return self.array.count == 0
-    }
+struct Stack<Element> {
+    private var array: [Element] = []
+    mutating func push(_ element: Element) { array.append(element) }
+    mutating func pop() -> Element? { return array.popLast() }
+    func peek() -> Element? { return array.last }
+    var isEmpty: Bool { return array.isEmpty }
+    var count: Int { return array.count }
 }
 
 class Solution {
     let mapping: [Character: Character] = [")": "(", "}": "{", "]": "["]
     func isValid(_ s: String) -> Bool {
-        let stack = Stack()
+        var stack = Stack<Character>()
         for character in s {
             switch character {
             case "(","{","[":
