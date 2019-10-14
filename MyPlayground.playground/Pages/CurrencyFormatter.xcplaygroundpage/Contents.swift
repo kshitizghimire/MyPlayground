@@ -2,27 +2,25 @@ import Foundation
 
 struct DefaultCurrencyFormatter {
     private let formatter: NumberFormatter
-
-    init(locale: Locale) {
+    
+    init(locale: Locale = Locale(identifier: "en_AU")) {
         formatter = NumberFormatter()
         formatter.locale = locale
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .currency
     }
-
+    
     func formatCurrency(string: String) -> String? {
-
-        guard let doubleValue = Double(string) else {
+        
+        guard let decimal = Decimal(string: string) else {
             return nil
         }
-        return formatter.string(from: NSNumber(value: doubleValue))
+        return formatter.string(from: NSDecimalNumber(decimal: decimal))
+        
     }
 }
 
 
-let rawCurrencyString = "12888889988777777.313"
-let locale = Locale(identifier: "en_AU")
-
-let formatter = DefaultCurrencyFormatter(locale: locale)
-formatter.formatCurrency(string: rawCurrencyString)
-
+let amount = "12888889988777777.313"
+let formatter = DefaultCurrencyFormatter()
+formatter.formatCurrency(string: amount)
