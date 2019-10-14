@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios'>
     <pages>
-        <page name='TwoSum'/>
-        <page name='ReverseString'/>
-        <page name='ReverseInteger'/>
-        <page name='JewelsAndStones'/>
         <page name='String'/>
         <page name='Array'/>
         <page name='Tree'/>
@@ -13,10 +9,6 @@
         <page name='Closure'/>
         <page name='URLSession'/>
         <page name='Protocol'/>
-        <page name='PassingCars'/>
-        <page name='BinaryGap'/>
-        <page name='CyclicRotation'/>
-        <page name='Queue'/>
         <page name='Decimal'/>
         <page name='DecimalEncoding'/>
         <page name='ErrorHandling'/>
@@ -31,12 +23,7 @@
         <page name='Base64String'/>
         <page name='Optional'/>
         <page name='LinkList'/>
-        <page name='BinaryTreeLevelOrdertraversal'/>
         <page name='Hashable'/>
-        <page name='LongestSubString'/>
-        <page name='MaximumDepthQueue'/>
-        <page name='MinimumDepthRecursive'/>
-        <page name='NoOfIsland'/>
         <page name='RegularExpression'/>
         <page name='Pow'/>
         <page name='Rethrows'/>
@@ -44,14 +31,14 @@
         <page name='SwiftVersion'/>
         <page name='TypeErasure'/>
         <page name='ErrorHandlingWithPatternMatching'/>
-        <page name='Fibonacci'/>
         <page name='PropertySeriializer'/>
         <page name='DecimalSerialization'/>
         <page name='DateDecodingStrategy'/>
-        <page name='14.Longest Common Prefix'/>
-        <page name='20.Valid Parentheses'/>
-        <page name='1047.Adjacent Duplicates'/>
-        <page name='28.Implement strStr()'/>
         <page name='String+Range'/>
+        <page name='Date'/>
+        <page name='DispatchQueue'/>
+        <page name='Function'/>
+        <page name='Range'/>
+        <page name='String.Index'/>
     </pages>
 </playground>
