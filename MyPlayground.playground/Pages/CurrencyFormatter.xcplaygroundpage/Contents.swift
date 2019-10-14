@@ -11,6 +11,7 @@ struct DefaultCurrencyFormatter {
     }
 
     func formatCurrency(string: String) -> String? {
+
         guard let doubleValue = Double(string) else {
             return nil
         }
@@ -19,7 +20,7 @@ struct DefaultCurrencyFormatter {
 }
 
 
-let rawCurrencyString = "12.313"
+let rawCurrencyString = "12888889988777777.313"
 let locale = Locale(identifier: "en_AU")
 
 let formatter = DefaultCurrencyFormatter(locale: locale)
