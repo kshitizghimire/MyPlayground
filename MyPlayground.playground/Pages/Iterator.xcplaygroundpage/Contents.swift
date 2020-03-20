@@ -1,21 +1,25 @@
 
 import Foundation
 
-func foo() -> Void {}
-let a: () = foo()
-print(type(of:a))
-
-
-let animals = ["Antelope", "Butterfly", "Camel", "Dolphin"]
-//for animal in animals {
-//    print(animal)
-//}
-
-
-var animalIterator = animals.makeIterator()
-while let animal = animalIterator.next() {
-    print(animal)
+struct CountDown: IteratorProtocol, Sequence {
+    var count: Int
+    mutating func next() -> Int? {
+        if count == 0 {
+            return nil
+        }
+        defer {
+            count -= 1
+        }
+        return count
+    }
 }
 
-let b = Optional<Int>.some(3)
-print(b!)
+var countDown = CountDown(count: 3)
+
+for i in countDown {
+    print(i)
+}
+
+while let c = countDown.next() {
+    print(c)
+}
