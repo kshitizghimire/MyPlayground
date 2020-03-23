@@ -37,8 +37,15 @@
         <page name='String+Range'/>
         <page name='Date'/>
         <page name='DispatchQueue'/>
+        <page name='OperationQueue'/>
         <page name='Function'/>
         <page name='Range'/>
         <page name='String.Index'/>
+        <page name='CurrencyFormatter'/>
+        <page name='NSAttributedString'/>
+        <page name='ViewTraverser'/>
+        <page name='NSRegularExpression'/>
+        <page name='CancellableDispatchAfter'/>
+        <page name='Collection'/>
     </pages>
 </playground>
