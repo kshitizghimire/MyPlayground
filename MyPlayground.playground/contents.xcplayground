@@ -47,5 +47,6 @@
         <page name='NSRegularExpression'/>
         <page name='CancellableDispatchAfter'/>
         <page name='Collection'/>
+        <page name='AnyEquatable'/>
     </pages>
 </playground>
