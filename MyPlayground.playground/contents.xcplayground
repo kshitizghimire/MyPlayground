@@ -49,5 +49,8 @@
         <page name='CancellableDispatchAfter'/>
         <page name='Collection'/>
         <page name='AnyEquatable'/>
+        <page name='UITableView'/>
+        <page name='Money'/>
+        <page name='StringCompare'/>
     </pages>
 </playground>
