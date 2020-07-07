@@ -54,5 +54,6 @@
         <page name='StringCompare'/>
         <page name='HitTest'/>
         <page name='Heap'/>
+        <page name='Clock'/>
     </pages>
 </playground>
