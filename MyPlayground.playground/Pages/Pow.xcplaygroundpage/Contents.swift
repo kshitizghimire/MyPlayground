@@ -3,20 +3,17 @@ import Foundation
 
 class Solution {
     func myPow(_ x: Double, _ n: Int) -> Double {
-        var result: Double = 1
-
-        if n == 0 { return result }
-
-        for _ in 1...abs(n) {
-            if n < 0 {
-                result = result * 1 / x
-            } else {
-                result = result * x
-            }
+        var n = n
+        var x = x
+        if n == 0 {
+            return 1
         }
-        return result
+        if n < 0 {
+            n = -n
+            x = 1 / x
+        }
+        return (n % 2 == 0) ? myPow(x * x, n / 2) : x * myPow(x * x, n / 2)
     }
-
 }
 
 pow(3, 20000000000)
