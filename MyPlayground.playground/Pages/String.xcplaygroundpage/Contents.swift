@@ -27,3 +27,12 @@ for c in flowers.utf8 {
 for c in flowers.unicodeScalars {
     print(c)
 }
+
+let s = " abcd"
+
+s[s.index(s.startIndex, offsetBy: 2)]
+
+let set: Set<Int> = [2,3,4]
+for a in set {
+    print(a)
+}
