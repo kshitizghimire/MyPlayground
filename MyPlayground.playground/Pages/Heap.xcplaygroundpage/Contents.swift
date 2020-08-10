@@ -30,7 +30,7 @@ struct Heap<T> {
         }
         elements[childIndex] = child
     }
-    mutating func insert(value: T) {
+    mutating func insert(_ value: T) {
         elements.append(value)
         heapifyUp(index: elements.count - 1)
     }
@@ -62,14 +62,17 @@ struct Heap<T> {
     func peek() -> T? { return elements.first }
 }
 
-var heap = Heap<Int>(sort: >)
+var heap = Heap<Int>(sort: <)
 
-let array = [1,4,5,7,3,10]
+let array = [1,4,5,7,3,10,10,7]
 
 for item in array {
-    heap.insert(value: item)
+    heap.insert(item)
 }
 
 while heap.isEmpty == false {
     print((heap.remove()) ?? 0)
 }
+
+let s = Set(array)
+let a = Array(s)

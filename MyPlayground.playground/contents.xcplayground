@@ -26,7 +26,6 @@
         <page name='LinkList'/>
         <page name='Hashable'/>
         <page name='RegularExpression'/>
-        <page name='Pow'/>
         <page name='Rethrows'/>
         <page name='KeyValuePairs'/>
         <page name='SwiftVersion'/>
@@ -50,11 +49,14 @@
         <page name='Collection'/>
         <page name='AnyEquatable'/>
         <page name='UITableView'/>
-        <page name='Money'/>
         <page name='StringCompare'/>
-        <page name='HitTest'/>
         <page name='Heap'/>
-        <page name='Clock'/>
-        <page name='Logger'/>
+        <page name='TimeZone'/>
+        <page name='HashSet'/>
+        <page name='BinarySearchTree'/>
+        <page name='Trie'/>
+        <page name='BlockNotificationCenter'/>
+        <page name='Try!'/>
+        <page name='BinaryDecimal'/>
     </pages>
 </playground>
