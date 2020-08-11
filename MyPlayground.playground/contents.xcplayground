@@ -17,7 +17,7 @@
         <page name='Generics'/>
         <page name='NetworkError'/>
         <page name='OptionSet'/>
-        <page name='Iterator'/>
+        <page name='Sequence'/>
         <page name='PatternMatchingOperator'/>
         <page name='RawRepresentable'/>
         <page name='Unicode'/>
@@ -58,5 +58,6 @@
         <page name='BlockNotificationCenter'/>
         <page name='Try!'/>
         <page name='BinaryDecimal'/>
+        <page name='MyCollection'/>
     </pages>
 </playground>
