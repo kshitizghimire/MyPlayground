@@ -59,5 +59,6 @@
         <page name='Try!'/>
         <page name='BinaryDecimal'/>
         <page name='MyCollection'/>
+        <page name='SubStrings'/>
     </pages>
 </playground>
