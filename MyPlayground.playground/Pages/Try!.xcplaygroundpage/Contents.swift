@@ -1,17 +1,18 @@
 import Foundation
 
-let string = "abcdef"
-
-var subString = [Substring]()
-
-var i = string.startIndex
-while i < string.endIndex {
-    var j = i
-    while j < string.endIndex {
-        subString.append(string[i...j])
-        j = string.index(after: j)
+class Solution {
+    func isPalindrome(_ s: String) -> Bool {
+        var l = s.startIndex
+        var r = s.index(before: s.endIndex)
+        while l <= r {
+            if s[l] != s[r] {
+                return false
+            }
+            l = s.index(after:l)
+            r = s.index(before:r)
+        }
+        return true
     }
-    i = string.index(after: i)
 }
 
-print(subString)
+Solution().isPalindrome("racecar")
