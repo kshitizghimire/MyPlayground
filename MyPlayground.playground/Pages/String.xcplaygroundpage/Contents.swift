@@ -17,7 +17,7 @@ print(template[...indexEndOfText])
 
 let flowers = "Flowers 💐"
 for c in flowers {
-    print(c)
+    print(c, type(of: c))
 }
 
 for c in flowers.utf8 {
@@ -25,14 +25,21 @@ for c in flowers.utf8 {
 }
 
 for c in flowers.unicodeScalars {
-    print(c)
+    print(c,type(of: c))
 }
 
 let s = " abcd"
 
 s[s.index(s.startIndex, offsetBy: 2)]
 
-let set: Set<Int> = [2,3,4]
-for a in set {
-    print(a)
+for alphabet in Unicode.Scalar.init("A").value...Unicode.Scalar("Z").value {
+    print(alphabet, Int(Unicode.Scalar(alphabet)!.value), Unicode.Scalar(alphabet))
+    
+    let c = Character.init(Unicode.Scalar(alphabet)!)
+    print(c, type(of: c))
+    let s = String.init(Unicode.Scalar(alphabet)!)
+    print(s, type(of: s))
 }
+Unicode.Scalar("A").value
+
+
