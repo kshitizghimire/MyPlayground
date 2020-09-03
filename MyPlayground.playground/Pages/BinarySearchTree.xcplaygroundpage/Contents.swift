@@ -45,23 +45,23 @@ final class BSTree {
         }
         return root!.val
     }
-    func deleteNode(_ root: TreeNode?,_ key: Int) -> TreeNode? {
+    func delete(_ root: TreeNode?,_ key: Int) -> TreeNode? {
         guard let root = root else {
             return nil
         }
         if key > root.val {
-            root.right = deleteNode(root.right, key)
+            root.right = delete(root.right, key)
         } else if key < root.val {
-            root.left = deleteNode(root.left, key);
+            root.left = delete(root.left, key);
         } else {
             if root.left == nil && root.right == nil {
                 return nil
             } else if root.right != nil {
                 root.val = successor(root)
-                root.right = deleteNode(root.right, root.val)
+                root.right = delete(root.right, root.val)
             } else {
                 root.val = predecessor(root)
-                root.left = deleteNode(root.left, root.val)
+                root.left = delete(root.left, root.val)
             }
         }
         return root

@@ -4,13 +4,12 @@ import Foundation
 
 func strCompare(s1: String, s2: String) -> Bool {
     if s1.count == s2.count {
-        for i in 0..<s1.count {
-            let first = s1[s1.index(s1.startIndex, offsetBy: i)]
-            let second = s2[s2.index(s2.startIndex, offsetBy: i)]
-            print(first, second)
-            if first != second {
+        var i = s1.startIndex
+        while i < s1.endIndex {
+            if s1[i] != s2[i] {
                 return false
             }
+            i = s1.index(after: i)
         }
         return true
     }
@@ -18,14 +17,6 @@ func strCompare(s1: String, s2: String) -> Bool {
     return false
 }
 
-strCompare(s1: "abc", s2: "ABC")
+strCompare(s1: "abc", s2: "abc")
 
-func detectCapitalUse(_ word: String) -> Bool {
-    return word == word.lowercased() || word == word.uppercased() || word == word.capitalized
-       
-}
 
-let c:Character = "a"
-print(type(of: c.isUppercase))
-print(type(of: c.uppercased()))
-detectCapitalUse("Abc")
