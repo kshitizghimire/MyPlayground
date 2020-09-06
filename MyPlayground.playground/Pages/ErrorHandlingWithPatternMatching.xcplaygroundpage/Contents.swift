@@ -1,7 +1,6 @@
 
 import Foundation
 
-
 enum URLError: Error {
     case notConnectedToInternet
     case networkConnectionLost
@@ -14,7 +13,6 @@ enum HTTPError: Error {
     case none
 }
 
-
 func handle(_ error: Error) {
     switch error {
     // Matching against a group of offline-related errors:
@@ -22,18 +20,18 @@ func handle(_ error: Error) {
          URLError.networkConnectionLost,
          URLError.cannotLoadFromNetwork:
         print(error)
-
+        
     // Matching against a specific error:
     case let error as HTTPError where error == .unauthorized:
         print(error)
-
+        
     case HTTPError.notFound:
         print(error)
-
+        
     // Matching against our networking error type:
     case is HTTPError:
         print(error)
-
+        
     // Fallback for other kinds of errors:
     default:
         print(error)
@@ -42,7 +40,3 @@ func handle(_ error: Error) {
 
 let error =  URLError.notConnectedToInternet
 handle(error)
-
-
-
-

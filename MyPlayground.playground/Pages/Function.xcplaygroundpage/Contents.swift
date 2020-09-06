@@ -4,7 +4,6 @@ import Foundation
 
 func someFunction(left: Int, right: Int) {
     print(left,right)
-    
 }
 
 var f = someFunction

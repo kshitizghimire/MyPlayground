@@ -46,7 +46,6 @@ type(of: a)
 
 print(Bundle(for: B.self).bundleURL)
 
-
 A.Model.self
 A.Error.self
 

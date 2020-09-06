@@ -16,10 +16,8 @@ struct DefaultCurrencyFormatter {
             return nil
         }
         return formatter.string(from: NSDecimalNumber(decimal: decimal))
-        
     }
 }
-
 
 let amount = "12888889988777777.313"
 let formatter = DefaultCurrencyFormatter()

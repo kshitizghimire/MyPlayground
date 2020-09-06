@@ -8,6 +8,7 @@
         <page name='BlockNotificationCenter'/>
         <page name='CancellableDispatchAfter'/>
         <page name='Codable'/>
+        <page name='Codec'/>
         <page name='Collection'/>
         <page name='ConvertBinaryToDecimal'/>
         <page name='CurrencyFormatter'/>
@@ -20,10 +21,8 @@
         <page name='Function'/>
         <page name='Generics'/>
         <page name='Hashable'/>
-        <page name='HashSet'/>
         <page name='Heap'/>
         <page name='JSONSerializer'/>
-        <page name='KeyValuePairs'/>
         <page name='MyCollection'/>
         <page name='NetworkError'/>
         <page name='NSAttributedString'/>
@@ -33,7 +32,6 @@
         <page name='OptionSet'/>
         <page name='PatternMatchingOperator'/>
         <page name='PropertySeriializer'/>
-        <page name='Protocol'/>
         <page name='Range'/>
         <page name='RawRepresentable'/>
         <page name='RegularExpression'/>
@@ -54,9 +52,7 @@
         <page name='UITableView'/>
         <page name='Unicode'/>
         <page name='UnsafeSwift'/>
-        <page name='Codec'/>
         <page name='URLSession'/>
-        <page name='URLSession+Combine'/>
         <page name='URLSession+Throw'/>
     </pages>
 </playground>

@@ -2,7 +2,6 @@
 
 import Foundation
 
-
 final class BlockNotificationCenter {
     
     var action: (() -> Void)? = nil
@@ -16,9 +15,6 @@ final class BlockNotificationCenter {
         action?()
     }
 }
-
-//: [Next](@next)
-
 
 let blockN = BlockNotificationCenter()
 blockN.action = {

@@ -5,9 +5,7 @@ struct Student: Codable {
     var joined: Date
 }
 
-
 //encode
-
 let student = Student(name: "Student name", joined: Date())
 let encoder = JSONEncoder()
 encoder.outputFormatting = .prettyPrinted
@@ -17,7 +15,6 @@ print(String(data: data, encoding: .utf8)!)
 
 //decode
 
-
 let stubStudent = """
 {
 "name": "Name",
@@ -25,19 +22,18 @@ let stubStudent = """
 }
 """
 
-
 let decoder = JSONDecoder()
 decoder.dateDecodingStrategy = .custom { decoder -> Date in
     let container = try decoder.singleValueContainer()
     let dateString = try container.decode(String.self)
     print(dateString)
-
+    
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MM-dd-yyyy"
     dateFormatter.timeZone = TimeZone.current
-
+    
     return dateFormatter.date(from: dateString)!
-
+    
 }
 
 do {

@@ -21,7 +21,6 @@ class CancellableDispatchAfter {
     }
 }
 
-
 let cancellable = CancellableDispatchAfter(dispathcQueue: DispatchQueue.main)
 cancellable.dispatchAfter(after: 3) {
     print("abc")
