@@ -13,7 +13,6 @@ class TreeNode {
     }
 }
  
-
 class Codec {
     func serialize(_ root: TreeNode?) -> String {
         guard let root = root else {

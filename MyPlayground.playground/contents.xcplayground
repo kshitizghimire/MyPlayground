@@ -57,6 +57,6 @@
         <page name='Codec'/>
         <page name='URLSession'/>
         <page name='URLSession+Combine'/>
-        <page name='ViewTraverser'/>
+        <page name='URLSession+Throw'/>
     </pages>
 </playground>

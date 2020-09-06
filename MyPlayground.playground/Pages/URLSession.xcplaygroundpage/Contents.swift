@@ -36,14 +36,4 @@ let task = session.dataTask(with: request) { (data, response, error) in
 
 task.resume()
 
-
-
-
-URLSession.shared.dataTask(with: URL(string: "https://api.github.com/users/kshitizghimire")!) { data, request, error in
-    print(String(data: data!, encoding: .utf8))
-    print((error))
-    print(request)
-    
-}.resume()
-
 PlaygroundPage.current.needsIndefiniteExecution = true
