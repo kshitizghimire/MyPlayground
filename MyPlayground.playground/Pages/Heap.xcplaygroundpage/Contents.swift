@@ -2,13 +2,13 @@
 
 import Foundation
 
-struct Heap<T> {
-    private var elements = [T]()
+struct Heap<Element> {
+    private var elements = [Element]()
     var isEmpty: Bool { return elements.isEmpty }
     var count: Int { return elements.count }
-    private let orderCriteria: (T, T) -> Bool
-    init(sort: @escaping (T, T) -> Bool) {
-        self.orderCriteria = sort
+    private let areInIncreasingOrder: (Element, Element) -> Bool
+    init(sortBy areInIncreasingOrder: @escaping (Element, Element) -> Bool) {
+        self.areInIncreasingOrder = areInIncreasingOrder
     }
     private func parentOf(_ index: Int) -> Int {
         return (index - 1) / 2
@@ -23,14 +23,14 @@ struct Heap<T> {
         var childIndex = index
         let child = elements[childIndex]
         var parentIndex = parentOf(childIndex)
-        while childIndex > 0 && orderCriteria(child, elements[parentIndex]) {
+        while childIndex > 0 && areInIncreasingOrder(child, elements[parentIndex]) {
             elements[childIndex] = elements[parentIndex]
             childIndex = parentIndex
             parentIndex = parentOf(childIndex)
         }
         elements[childIndex] = child
     }
-    mutating func insert(_ value: T) {
+    mutating func insert(_ value: Element) {
         elements.append(value)
         heapifyUp(index: elements.count - 1)
     }
@@ -38,17 +38,17 @@ struct Heap<T> {
         let leftChildIndex = leftOf(index)
         let rightChildIndex = leftChildIndex + 1
         var first = index
-        if leftChildIndex < endIndex && orderCriteria(elements[leftChildIndex], elements[first]) {
+        if leftChildIndex < endIndex && areInIncreasingOrder(elements[leftChildIndex], elements[first]) {
             first = leftChildIndex
         }
-        if rightChildIndex < endIndex && orderCriteria(elements[rightChildIndex], elements[first]) {
+        if rightChildIndex < endIndex && areInIncreasingOrder(elements[rightChildIndex], elements[first]) {
             first = rightChildIndex
         }
         if first == index { return }
         elements.swapAt(index, first)
         heapifyDown(index: first, endIndex: endIndex)
     }
-    mutating func remove() -> T? {
+    mutating func remove() -> Element? {
         guard elements.isEmpty == false else { return nil }
         if elements.count == 1 {
             return elements.removeLast()
@@ -59,20 +59,18 @@ struct Heap<T> {
             return value
         }
     }
-    func peek() -> T? { return elements.first }
+    func peek() -> Element? { return elements.first }
 }
 
-var heap = Heap<Int>(sort: <)
+var heap = Heap<Int>(sortBy: <)
 
 let array = [1,4,5,7,3,10,10,7]
-
 for item in array {
     heap.insert(item)
 }
 
+var sorted = [Int]()
 while heap.isEmpty == false {
-    print((heap.remove()) ?? 0)
+    sorted.append(heap.remove()!)
 }
-
-let s = Set(array)
-let a = Array(s)
+print(sorted)
