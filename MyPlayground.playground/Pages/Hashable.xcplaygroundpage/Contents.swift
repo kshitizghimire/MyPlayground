@@ -1,19 +1,40 @@
-//: [Previous](@previous)
 
 import Foundation
-import UIKit
 
-class Foo: Hashable {
-    static func == (lhs: Foo, rhs: Foo) -> Bool {
-        return lhs.a == rhs.a
+class TreeNode: Hashable {
+    static func == (lhs: TreeNode, rhs: TreeNode) -> Bool {
+        return lhs.val == rhs.val
+            && lhs.left == rhs.left
+            && lhs.right == rhs.right
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(self.a)
+        hasher.combine(val)
+//        hasher.combine(left)
+//        hasher.combine(right)
     }
-    let a = ""
+    var val: Int
+    var left: TreeNode?
+    var right: TreeNode?
+    init(_ val: Int) {
+        self.val = val
+        self.left = nil
+        self.right = nil
+    }
 }
 
 
-let foo = Foo()
-print(foo.hashValue)
+let one = TreeNode(1)
+one.left = TreeNode(1)
+let two = TreeNode(1)
+
+one.hashValue
+two.hashValue
+
+var map = [TreeNode: TreeNode]()
+map[one] = one
+map[two] = two
+
+
+
+print(map.count)
