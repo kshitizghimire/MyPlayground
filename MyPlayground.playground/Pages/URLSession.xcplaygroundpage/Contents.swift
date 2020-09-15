@@ -1,7 +1,6 @@
 import Foundation
 import PlaygroundSupport
 struct Github: Codable {
-    
     let name: String?
     let location: String?
     let followers: Int?
@@ -14,7 +13,6 @@ struct Github: Codable {
         case followers
         case repos = "public_repos"
         case avatarUrl = "avatar_url"
-        
     }
 }
 
@@ -37,3 +35,4 @@ let task = session.dataTask(with: request) { (data, response, error) in
 task.resume()
 
 PlaygroundPage.current.needsIndefiniteExecution = true
+

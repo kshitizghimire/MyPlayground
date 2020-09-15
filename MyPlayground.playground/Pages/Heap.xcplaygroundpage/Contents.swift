@@ -1,4 +1,3 @@
-//: [Previous](@previous)
 
 import Foundation
 
@@ -62,10 +61,12 @@ struct Heap<Element> {
     func peek() -> Element? { return elements.first }
 }
 
-var heap = Heap<Int>(sortBy: <)
+var heap = Heap<Int> { (a, b) -> Bool in
+    return a < b
+}
 
-let array = [1,4,5,7,3,10,10,7]
-for item in array {
+let unsorted = [1,4,5,7,3,10,10,7]
+for item in unsorted {
     heap.insert(item)
 }
 
@@ -73,4 +74,6 @@ var sorted = [Int]()
 while heap.isEmpty == false {
     sorted.append(heap.remove()!)
 }
+print(unsorted)
 print(sorted)
+

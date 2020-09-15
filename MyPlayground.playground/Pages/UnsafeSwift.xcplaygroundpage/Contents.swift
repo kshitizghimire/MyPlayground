@@ -19,5 +19,3 @@ MemoryLayout<Double>.size
 MemoryLayout<String>.size
 MemoryLayout<Decimal>.size
 
-var number = 5
-
