@@ -1,21 +1,16 @@
 import Foundation
 
-
-
-
-let string = "string"
-let arr = Array(string)
-let str = String(arr[0...2])
-
-
 class Solution {
-    var paths = [[Int]]()
+    struct Cell: Hashable {
+        var row: Int
+        var col: Int
+    }
+    var paths = [[Cell]]()
     func uniquePathsIII(_ grid: [[Int]]) -> Int {
-        
         for i in 0..<grid.count {
-            for j in 0<grid[i].count{
+            for j in 0..<grid[i].count{
                 if grid[i][j] == 1 {
-                    dfs(grid, i, j)
+                    dfs(grid, i, j, Set<Cell>())
                 }
             }
         }
@@ -23,15 +18,24 @@ class Solution {
         return paths.count
     }
     
-    func dfs(_ grid: [[Int]], _ i: Int, _ j: Int, visited: Set<Array<Int>>) {
-        guard i>= 0 && i<grid.count && j>=0 && j<grid[i].count && visited.contains(grid[i][j]) == false else {
+    func dfs(_ grid: [[Int]], _ i: Int, _ j: Int,_ currentPath: Set<Cell>) {
+        guard i >= 0 && i < grid.count && j >= 0 && j < grid[i].count && currentPath.contains(Cell(row: i, col: j)) == false && grid[i][j] != -1 else {
             return
         }
+        if grid[i][j] == 2 {
+            paths.append(Array(currentPath))
+        }
+        var currentPath = currentPath
+        currentPath.insert(Cell(row: i, col: j))
+        dfs(grid,i + 1, j, currentPath)
+        dfs(grid,i - 1, j, currentPath)
+        dfs(grid,i, j + 1, currentPath)
+        dfs(grid,i, j - 1, currentPath)
         
     }
 }
 
-[[1,0,0,0],
- [0,0,0,0],
- [0,0,2,-1]]
+Solution().uniquePathsIII([[1,0,0,0],
+                           [0,0,0,0],
+                           [0,0,2,-1]])
 
