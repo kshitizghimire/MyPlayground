@@ -1,25 +1,15 @@
 
-import Foundation
 
-struct CountDown: IteratorProtocol, Sequence {
-    var count: Int
-    mutating func next() -> Int? {
-        if count == 0 {
-            return nil
+extension Sequence {
+    public func map2<T>( _ transform: (Element) -> T) -> [T] {
+        var result = [T]()
+        for element in self {
+            let newElement = transform(element)
+            result.append(newElement)
         }
-        defer {
-            count -= 1
-        }
-        return count
+        return result
     }
 }
 
-var countDown = CountDown(count: 3)
-
-for i in countDown {
-    print(i)
-}
-
-while let c = countDown.next() {
-    print(c)
-}
+let m = [2].map2 { String($0) }
+print(m)
