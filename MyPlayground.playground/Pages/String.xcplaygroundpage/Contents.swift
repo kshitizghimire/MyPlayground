@@ -40,6 +40,10 @@ for alphabet in Unicode.Scalar.init("A").value...Unicode.Scalar("Z").value {
     let s = String.init(Unicode.Scalar(alphabet)!)
     print(s, type(of: s))
 }
-Unicode.Scalar("A").value
+
+for c in Unicode.Scalar("A").value...Unicode.Scalar("Z").value {
+    
+    print(Unicode.Scalar.init(c)!)
+}
 
 
