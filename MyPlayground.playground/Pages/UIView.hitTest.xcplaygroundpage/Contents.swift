@@ -20,11 +20,17 @@ extension UIView {
     }
     
     func point2(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        return self.point(inside: point, with: event)
+        return point.x >= self.bounds.origin.x && point.x <= self.bounds.size.width
+            && point.y > self.bounds.origin.y && point.y <= self.bounds.size.height
     }
     //    open func point(inside point: CGPoint, with event: UIEvent?) -> Bool
 }
 
+let view = UIView(frame: CGRect(x: 50, y: 50, width: 100, height: 100))
+print(view.bounds)
+let point = CGPoint(x: 10, y: 10)
+let inside = view.point2(inside: point, with: nil)
+print(inside)
 
 
 let view1 = UIView(frame: CGRect(x: 50, y: 50, width: 128, height: 128))
