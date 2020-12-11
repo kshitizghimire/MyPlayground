@@ -33,7 +33,7 @@ let s = " abcd"
 s[s.index(s.startIndex, offsetBy: 2)]
 
 for alphabet in Unicode.Scalar.init("A").value...Unicode.Scalar("Z").value {
-    print(alphabet, Int(Unicode.Scalar(alphabet)!.value), Unicode.Scalar(alphabet))
+    print(alphabet, Int(Unicode.Scalar(alphabet)!.value), Unicode.Scalar(alphabet)!)
     
     let c = Character.init(Unicode.Scalar(alphabet)!)
     print(c, type(of: c))

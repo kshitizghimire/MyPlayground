@@ -20,5 +20,3 @@ class UITableView2 {
     }
 }
 
-let set = Set.init("abcd")
-print(set)
