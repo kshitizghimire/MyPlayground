@@ -6,7 +6,9 @@ public struct AnyEquatable: Equatable {
     public let value: Any
     private let equals: (Any) -> Bool
 
-    public init<E: Equatable>(_ value: E) {
+    public init<E: Equatable>(
+        _ value: E
+    ) {
         self.value = value
         self.equals = { ($0 as? E) == value }
     }
@@ -16,8 +18,7 @@ public struct AnyEquatable: Equatable {
     }
 }
 
-
-func foocompare(first: AnyEquatable, second:  AnyEquatable) -> Bool {
+func foocompare(first: AnyEquatable, second: AnyEquatable) -> Bool {
     return first == second
 }
 

@@ -1,4 +1,3 @@
-
 import UIKit
 
 extension UIView {
@@ -17,7 +16,7 @@ extension UIView {
         }
         return nil
     }
-    
+
     func point2(inside point: CGPoint, with event: UIEvent?) -> Bool {
         return point.x >= self.bounds.origin.x && point.x <= self.bounds.size.width
             && point.y > self.bounds.origin.y && point.y <= self.bounds.size.height
@@ -29,7 +28,6 @@ print(view.bounds)
 let point = CGPoint(x: 10, y: 10)
 let inside = view.point2(inside: point, with: nil)
 print(inside)
-
 
 let view1 = UIView(frame: CGRect(x: 50, y: 50, width: 128, height: 128))
 let view2 = UIView(frame: CGRect(x: 200, y: 200, width: 128, height: 128))

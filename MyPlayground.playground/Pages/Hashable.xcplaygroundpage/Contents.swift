@@ -1,4 +1,3 @@
-
 import Foundation
 
 class TreeNode: Hashable {
@@ -7,22 +6,23 @@ class TreeNode: Hashable {
             && lhs.left == rhs.left
             && lhs.right == rhs.right
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(val)
-//        hasher.combine(left)
-//        hasher.combine(right)
+        //        hasher.combine(left)
+        //        hasher.combine(right)
     }
     var val: Int
     var left: TreeNode?
     var right: TreeNode?
-    init(_ val: Int) {
+    init(
+        _ val: Int
+    ) {
         self.val = val
         self.left = nil
         self.right = nil
     }
 }
-
 
 let one = TreeNode(1)
 one.left = TreeNode(1)
@@ -34,7 +34,5 @@ two.hashValue
 var map = [TreeNode: TreeNode]()
 map[one] = one
 map[two] = two
-
-
 
 print(map.count)

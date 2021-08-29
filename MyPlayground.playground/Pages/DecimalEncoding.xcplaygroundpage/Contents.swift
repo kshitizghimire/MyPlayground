@@ -12,7 +12,7 @@ extension Decimal {
 
 struct Foo: Codable {
     let value: Decimal
-    
+
     private enum CodingKeys: String, CodingKey {
         case value
     }
@@ -23,13 +23,17 @@ struct Foo: Codable {
         try container.encode(Decimal(string: string), forKey: .value)
     }
 
-    init(from decoder: Decoder) throws {
+    init(
+        from decoder: Decoder
+    ) throws {
         print("decoder")
         let containter = try decoder.container(keyedBy: CodingKeys.self)
         self.value = try containter.decode(Decimal.self, forKey: .value)
     }
-    
-    init(value: Decimal) {
+
+    init(
+        value: Decimal
+    ) {
         self.value = value
     }
 }
@@ -42,7 +46,6 @@ encoder.dataEncodingStrategy = .base64
 let data = try? encoder.encode(foo)
 
 print(String(data: data!, encoding: .utf8)!)
-
 
 struct DecimalStruct: Codable {
     var val = Decimal(12.313)
@@ -67,15 +70,14 @@ let doubleXMLData = try plEncoder.encode(DoubleStruct())
 print(String(data: doubleXMLData, encoding: .utf8)!)
 
 var myDecimal: Decimal = 12.313
-print(myDecimal) // 12.313000000000002048
+print(myDecimal)  // 12.313000000000002048
 
 var result: Decimal = 0
 NSDecimalRound(&result, &myDecimal, 3, .down)
-print(result) // 12.313
+print(result)  // 12.313
 
 MemoryLayout.size(ofValue: result)
 MemoryLayout.size(ofValue: myDecimal)
-
 
 let decimalString = Decimal(string: "12.3")
 MemoryLayout.size(ofValue: decimalString)

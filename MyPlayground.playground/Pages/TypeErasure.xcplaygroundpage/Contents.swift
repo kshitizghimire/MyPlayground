@@ -22,7 +22,9 @@ extension String: Cachable {
 class AnyCachable<T>: Cachable {
     private let _decode: (_ data: Data) -> T?
     private let _encode: () -> Data?
-    init<U: Cachable>(_ cachable: U) where U.CacheType == T {
+    init<U: Cachable>(
+        _ cachable: U
+    ) where U.CacheType == T {
         _decode = cachable.decode
         _encode = cachable.encode
     }
@@ -34,18 +36,19 @@ class AnyCachable<T>: Cachable {
     }
 }
 
-
 class AnyCachable2<C: Cachable>: Cachable {
     private let cachable: C
-    
-    init(_ cachable: C) {
+
+    init(
+        _ cachable: C
+    ) {
         self.cachable = cachable
     }
-    
+
     func encode() -> Data? {
         return self.cachable.encode()
     }
-    
+
     func decode(_ data: Data) -> C.CacheType? {
         return self.cachable.decode(data)
     }
@@ -59,7 +62,6 @@ struct CacheItem {
 let cacheItem = CacheItem(item: AnyCachable("abc"), expiryDate: Date())
 let cache: [AnyCachable<String>] = [AnyCachable("Hello"), AnyCachable("World")]
 
-
 struct CacheItem2 {
     let item: AnyCachable2<String>
     let expiryDate: Date
@@ -67,4 +69,3 @@ struct CacheItem2 {
 
 let cacheItem2 = CacheItem2(item: AnyCachable2("abc"), expiryDate: Date())
 let cache2: [AnyCachable2<String>] = [AnyCachable2("Hello"), AnyCachable2("World")]
-

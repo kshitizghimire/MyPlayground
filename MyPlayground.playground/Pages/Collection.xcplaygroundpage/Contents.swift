@@ -5,7 +5,7 @@ import Foundation
 enum Category: Hashable {
     case dairy
     case vegetables
-    
+
 }
 struct Product {
     var name: String
@@ -13,14 +13,16 @@ struct Product {
 }
 
 struct ProductCollection {
-    typealias DictionaryType = [Category : [Product]]
+    typealias DictionaryType = [Category: [Product]]
 
     // Underlying, private storage, that is the same type of dictionary
     // that we previously was using at the call site
     private var products = DictionaryType()
 
     // Enable our collection to be initialized with a dictionary
-    init(products: DictionaryType) {
+    init(
+        products: DictionaryType
+    ) {
         self.products = products
     }
 }
@@ -45,16 +47,15 @@ extension ProductCollection: Collection {
     }
 }
 
-
-let products: [Category : [Product]] = [
+let products: [Category: [Product]] = [
     .dairy: [
         Product(name: "Milk", category: .dairy),
-        Product(name: "Butter", category: .dairy)
+        Product(name: "Butter", category: .dairy),
     ],
     .vegetables: [
         Product(name: "Cucumber", category: .vegetables),
-        Product(name: "Lettuce", category: .vegetables)
-    ]
+        Product(name: "Lettuce", category: .vegetables),
+    ],
 ]
 
 let productCollection = ProductCollection(products: products)

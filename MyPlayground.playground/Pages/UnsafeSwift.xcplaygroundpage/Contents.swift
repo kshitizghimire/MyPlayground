@@ -18,4 +18,3 @@ MemoryLayout<Float64>.size
 MemoryLayout<Double>.size
 MemoryLayout<String>.size
 MemoryLayout<Decimal>.size
-

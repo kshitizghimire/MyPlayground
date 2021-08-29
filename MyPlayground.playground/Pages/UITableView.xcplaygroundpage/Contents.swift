@@ -3,7 +3,7 @@
 import UIKit
 
 class UITableView2 {
-    
+
     var storage = [UITableViewCell]()
     func dequeueReusableCell(withIdentifier identifier: String) -> UITableViewCell? {
         if storage.isEmpty {
@@ -11,7 +11,8 @@ class UITableView2 {
             for _ in 0..<n {
                 storage.append(UITableViewCell(frame: .zero))
             }
-        } else {
+        }
+        else {
             let result = storage.removeFirst()
             storage.append(result)
             return result
@@ -19,4 +20,3 @@ class UITableView2 {
         return nil
     }
 }
-

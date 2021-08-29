@@ -3,14 +3,13 @@
 import Foundation
 
 struct Person {
-    let name : String
-    
-    static func ~=(pattern: String, value: Person) -> Bool {
+    let name: String
+
+    static func ~= (pattern: String, value: Person) -> Bool {
         print("called pattern matching")
         return value.name == pattern
     }
 }
-
 
 let p = Person(name: "Alessandro")
 
@@ -19,18 +18,17 @@ let p = Person(name: "Alessandro")
 //}
 
 switch p {
-case "Alessandro":
-    print("Alessandro")
-case "abc":
-    print("abc")
-    
-default:
-    break
-    
+    case "Alessandro":
+        print("Alessandro")
+    case "abc":
+        print("abc")
+
+    default:
+        break
+
 }
 
 let a: [String] = []
-
 
 let b = a.first
 let c = a[0]

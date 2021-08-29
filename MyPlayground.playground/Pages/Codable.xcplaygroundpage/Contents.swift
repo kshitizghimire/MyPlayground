@@ -6,13 +6,13 @@ struct Movie: Codable {
     enum MovieGenere: String, Codable {
         case horror, comedy, adventure, animation
     }
-    
-    let name : String
-    let moviesGenere : [MovieGenere]
-    let rating : Int
+
+    let name: String
+    let moviesGenere: [MovieGenere]
+    let rating: Int
 }
 
-let upMovie = Movie(name: "Up", moviesGenere: [.comedy , .adventure, .animation], rating : 4)
+let upMovie = Movie(name: "Up", moviesGenere: [.comedy, .adventure, .animation], rating: 4)
 
 print(upMovie)
 
@@ -26,8 +26,8 @@ do {
 catch {
 }
 
-
-let jsonString = "{\"name\":\"Up\",\"moviesGenere\":[\"comedy\",\"adventure\",\"animation\"],\"rating\":4}"
+let jsonString =
+    "{\"name\":\"Up\",\"moviesGenere\":[\"comedy\",\"adventure\",\"animation\"],\"rating\":4}"
 let jsonData = jsonString.data(using: .utf8)
 
 // Decode data

@@ -1,12 +1,9 @@
-
-
 protocol NetworkError {
     associatedtype Custom
-    
+
     var custom: Custom? { get }
     var `default`: Error? { get }
 }
-
 
 struct CARError {
     var errorCode: String
@@ -18,19 +15,19 @@ enum CARNetworkError: NetworkError {
     case `default`(error: Error)
     var custom: CARError? {
         switch self {
-        case let .custom(error):
-            return error
-        case .default:
-            return nil
+            case let .custom(error):
+                return error
+            case .default:
+                return nil
         }
     }
-    
+
     var `default`: Error? {
         switch self {
-        case .custom:
-            return nil
-        case let .default(error):
-            return error
+            case .custom:
+                return nil
+            case let .default(error):
+                return error
         }
     }
 }
@@ -40,23 +37,23 @@ enum Result<Value> {
     case failure(CARNetworkError)
 }
 
-
 func fooFunc(result: Result<Int>) {
-    
+
     switch result {
-    case .success(let val):
-        print(val)
-    case .failure(let error):
-        switch error {
-        case .custom(let error):
-            print(error)
-        case .default(let error):
-            print(error)
-        }
+        case .success(let val):
+            print(val)
+        case .failure(let error):
+            switch error {
+                case .custom(let error):
+                    print(error)
+                case .default(let error):
+                    print(error)
+            }
     }
 }
 
-let result = Result<Int>.failure(.custom(error: CARError(errorCode:"1000", errorDescription:"Bad request")))
+let result = Result<Int>
+    .failure(.custom(error: CARError(errorCode: "1000", errorDescription: "Bad request")))
 
 fooFunc(result: result)
 

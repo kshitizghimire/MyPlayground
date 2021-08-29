@@ -7,7 +7,9 @@ final class BSTree {
         var val: Int
         var left: TreeNode?
         var right: TreeNode?
-        init(_ val: Int) {
+        init(
+            _ val: Int
+        ) {
             self.val = val
         }
     }
@@ -18,16 +20,17 @@ final class BSTree {
         if val == root.val {
             return root
         }
-        return val < root.val ? search(root.left, val) : search(root.right, val);
+        return val < root.val ? search(root.left, val) : search(root.right, val)
     }
-    func insert(_ root: TreeNode?,_ val: Int) -> TreeNode {
+    func insert(_ root: TreeNode?, _ val: Int) -> TreeNode {
         guard let root = root else {
             return TreeNode(val)
         }
         if val < root.val {
-            root.left = insert(root.left,val)
-        } else if val > root.val {
-            root.right = insert(root.right,val)
+            root.left = insert(root.left, val)
+        }
+        else if val > root.val {
+            root.right = insert(root.right, val)
         }
         return root
     }
@@ -45,21 +48,25 @@ final class BSTree {
         }
         return root!.val
     }
-    func delete(_ root: TreeNode?,_ key: Int) -> TreeNode? {
+    func delete(_ root: TreeNode?, _ key: Int) -> TreeNode? {
         guard let root = root else {
             return nil
         }
         if key > root.val {
             root.right = delete(root.right, key)
-        } else if key < root.val {
-            root.left = delete(root.left, key);
-        } else {
+        }
+        else if key < root.val {
+            root.left = delete(root.left, key)
+        }
+        else {
             if root.left == nil && root.right == nil {
                 return nil
-            } else if root.right != nil {
+            }
+            else if root.right != nil {
                 root.val = successor(root)
                 root.right = delete(root.right, root.val)
-            } else {
+            }
+            else {
                 root.val = predecessor(root)
                 root.left = delete(root.left, root.val)
             }

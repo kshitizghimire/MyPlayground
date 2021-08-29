@@ -16,30 +16,30 @@ print(String(data: data, encoding: .utf8)!)
 //decode
 
 let stubStudent = """
-{
-"name": "Name",
-"joined": "03-23-1999"
-}
-"""
+    {
+    "name": "Name",
+    "joined": "03-23-1999"
+    }
+    """
 
 let decoder = JSONDecoder()
 decoder.dateDecodingStrategy = .custom { decoder -> Date in
     let container = try decoder.singleValueContainer()
     let dateString = try container.decode(String.self)
     print(dateString)
-    
+
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MM-dd-yyyy"
     dateFormatter.timeZone = TimeZone.current
-    
+
     return dateFormatter.date(from: dateString)!
-    
+
 }
 
 do {
     let student = try decoder.decode(Student.self, from: stubStudent.data(using: .utf8)!)
     print(student)
-} catch {
+}
+catch {
     print(error)
 }
-

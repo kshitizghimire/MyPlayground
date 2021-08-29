@@ -7,7 +7,6 @@ struct Foo: Codable {
     var double: Double
 }
 
-
 let foo = Foo(decimal: Decimal(string: "12.313")!, string: "Some", bool: true, double: 12.313)
 
 let encoder = JSONEncoder()

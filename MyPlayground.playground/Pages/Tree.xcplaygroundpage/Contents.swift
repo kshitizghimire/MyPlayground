@@ -1,13 +1,14 @@
-
 class Node<T> {
     var value: T
     var children: [Node] = []
     weak var parent: Node?
-    
-    init(value: T) {
+
+    init(
+        value: T
+    ) {
         self.value = value
     }
-    
+
     func add(child: Node) {
         children.append(child)
         child.parent = self
@@ -19,7 +20,7 @@ extension Node: CustomStringConvertible {
     var description: String {
         // 3
         var text = "\(value)"
-        
+
         // 4
         if !children.isEmpty {
             text += " {" + children.map { $0.description }.joined(separator: ", ") + "} "
@@ -84,6 +85,8 @@ extension Node where T: Equatable {
     }
 }
 
-beverages.search(value: "cocoa") // returns the "cocoa" node
-beverages.search(value: "chai") // returns the "chai" node
-beverages.search(value: "1") // returns nil
+// returns the "cocoa" node
+beverages.search(value: "cocoa")
+// returns the "chai" node
+beverages.search(value: "chai")
+beverages.search(value: "1")  // returns nil

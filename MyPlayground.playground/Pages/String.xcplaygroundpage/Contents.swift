@@ -1,10 +1,8 @@
-
 import Foundation
 
 let template = "<<<Hello>>>"
 let indexStartOfText = template.index(template.startIndex, offsetBy: 3)
 let indexEndOfText = template.index(template.endIndex, offsetBy: -4)
-
 
 let indexFirst = indexStartOfText...
 print(indexFirst.lowerBound)
@@ -13,7 +11,6 @@ print(template[indexStartOfText...])
 let index = ...indexEndOfText
 print(index.upperBound)
 print(template[...indexEndOfText])
-
 
 let flowers = "Flowers 💐"
 for c in flowers {
@@ -25,7 +22,7 @@ for c in flowers.utf8 {
 }
 
 for c in flowers.unicodeScalars {
-    print(c,type(of: c))
+    print(c, type(of: c))
 }
 
 let s = " abcd"
@@ -34,7 +31,7 @@ s[s.index(s.startIndex, offsetBy: 2)]
 
 for alphabet in Unicode.Scalar.init("A").value...Unicode.Scalar("Z").value {
     print(alphabet, Int(Unicode.Scalar(alphabet)!.value), Unicode.Scalar(alphabet)!)
-    
+
     let c = Character.init(Unicode.Scalar(alphabet)!)
     print(c, type(of: c))
     let s = String.init(Unicode.Scalar(alphabet)!)
@@ -42,8 +39,6 @@ for alphabet in Unicode.Scalar.init("A").value...Unicode.Scalar("Z").value {
 }
 
 for c in Unicode.Scalar("A").value...Unicode.Scalar("Z").value {
-    
+
     print(Unicode.Scalar.init(c)!)
 }
-
-

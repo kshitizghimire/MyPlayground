@@ -5,7 +5,9 @@ import Foundation
 struct MyCollection: Collection {
     let storage: [Int]
     var count: Int
-    init(storage: [Int]) {
+    init(
+        storage: [Int]
+    ) {
         self.storage = storage
         count = storage.count - 1
     }
@@ -26,7 +28,7 @@ struct MyCollection: Collection {
 }
 
 extension MyCollection: IteratorProtocol, Sequence {
-    
+
     mutating func next() -> Int? {
         if count < 0 {
             return nil
@@ -43,4 +45,3 @@ let newCol = MyCollection(storage: [123490])
 for i in newCol {
     print(i)
 }
-

@@ -5,16 +5,19 @@ import Foundation
 class CancellableDispatchAfter {
     var cancel: Bool = false
     let dispathcQueue: DispatchQueue
-    
-    init(dispathcQueue: DispatchQueue) {
+
+    init(
+        dispathcQueue: DispatchQueue
+    ) {
         self.dispathcQueue = dispathcQueue
     }
-    
-    func dispatchAfter(after: Int, closure: @escaping () ->Void) {
+
+    func dispatchAfter(after: Int, closure: @escaping () -> Void) {
         dispathcQueue.asyncAfter(deadline: .now() + .seconds(after)) {
             if !self.cancel {
                 closure()
-            } else {
+            }
+            else {
                 print("cancelled")
             }
         }

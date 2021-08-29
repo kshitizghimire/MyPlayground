@@ -1,6 +1,5 @@
-
 //only works with Element with String type
-let a = ["2","3","4"].joined(separator: ",")
+let a = ["2", "3", "4"].joined(separator: ",")
 print(a)
 
 //return of split is SubString type

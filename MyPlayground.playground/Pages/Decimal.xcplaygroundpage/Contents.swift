@@ -17,7 +17,8 @@ func randomDecimal() -> Decimal {
     return Decimal(string: string)!
 }
 
-var totalCorrectDirectly = 0, totalCorrectThroughString = 0
+var totalCorrectDirectly = 0
+var totalCorrectThroughString = 0
 for _ in 1...1000 {
     let decimal = randomDecimal()
     let double = (decimal as NSNumber).doubleValue
@@ -26,8 +27,5 @@ for _ in 1...1000 {
     totalCorrectDirectly += correctDirectly ? 1 : 0
     totalCorrectThroughString += correctThroughString ? 1 : 0
 }
-totalCorrectDirectly // ~378
-totalCorrectThroughString // 1000
-
-
-
+totalCorrectDirectly  // ~378
+totalCorrectThroughString  // 1000

@@ -13,10 +13,8 @@ func strCompare(s1: String, s2: String) -> Bool {
         }
         return true
     }
-    
+
     return false
 }
 
 strCompare(s1: "abc", s2: "abc")
-
-

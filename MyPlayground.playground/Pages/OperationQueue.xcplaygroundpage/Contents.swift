@@ -17,4 +17,3 @@ class CustomOperation: Operation {
 let custom = CustomOperation()
 custom.queuePriority = .veryHigh
 operationQueue.addOperations([blockOperation, custom], waitUntilFinished: false)
-

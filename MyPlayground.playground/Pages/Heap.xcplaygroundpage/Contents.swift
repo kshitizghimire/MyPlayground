@@ -1,4 +1,3 @@
-
 import Foundation
 
 struct Heap<Element> {
@@ -6,7 +5,9 @@ struct Heap<Element> {
     var isEmpty: Bool { return elements.isEmpty }
     var count: Int { return elements.count }
     private let areInIncreasingOrder: (Element, Element) -> Bool
-    init(sortBy areInIncreasingOrder: @escaping (Element, Element) -> Bool) {
+    init(
+        sortBy areInIncreasingOrder: @escaping (Element, Element) -> Bool
+    ) {
         self.areInIncreasingOrder = areInIncreasingOrder
     }
     private func parentOf(_ index: Int) -> Int {
@@ -37,10 +38,14 @@ struct Heap<Element> {
         let leftChildIndex = leftOf(index)
         let rightChildIndex = leftChildIndex + 1
         var first = index
-        if leftChildIndex < endIndex && areInIncreasingOrder(elements[leftChildIndex], elements[first]) {
+        if leftChildIndex < endIndex
+            && areInIncreasingOrder(elements[leftChildIndex], elements[first])
+        {
             first = leftChildIndex
         }
-        if rightChildIndex < endIndex && areInIncreasingOrder(elements[rightChildIndex], elements[first]) {
+        if rightChildIndex < endIndex
+            && areInIncreasingOrder(elements[rightChildIndex], elements[first])
+        {
             first = rightChildIndex
         }
         if first == index { return }
@@ -51,7 +56,8 @@ struct Heap<Element> {
         guard elements.isEmpty == false else { return nil }
         if elements.count == 1 {
             return elements.removeLast()
-        } else {
+        }
+        else {
             let value = elements[0]
             elements[0] = elements.removeLast()
             heapifyDown(index: 0, endIndex: elements.count)
@@ -65,7 +71,7 @@ var heap = Heap<Int> { (a, b) -> Bool in
     return a < b
 }
 
-let unsorted = [1,4,5,7,3,10,10,7]
+let unsorted = [1, 4, 5, 7, 3, 10, 10, 7]
 for item in unsorted {
     heap.insert(item)
 }
@@ -76,4 +82,3 @@ while heap.isEmpty == false {
 }
 print(unsorted)
 print(sorted)
-

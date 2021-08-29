@@ -1,12 +1,13 @@
 import Foundation
 import PlaygroundSupport
+
 struct Github: Codable {
     let name: String?
     let location: String?
     let followers: Int?
     let avatarUrl: String?
     let repos: Int?
-    
+
     private enum CodingKeys: String, CodingKey {
         case name
         case location
@@ -26,8 +27,9 @@ let task = session.dataTask(with: request) { (data, response, error) in
         let decoder = JSONDecoder()
         let github = try decoder.decode(Github.self, from: data)
         print(github)
-        
-    } catch let err {
+
+    }
+    catch let err {
         print("Err", err)
     }
 }
@@ -35,4 +37,3 @@ let task = session.dataTask(with: request) { (data, response, error) in
 task.resume()
 
 PlaygroundPage.current.needsIndefiniteExecution = true
-

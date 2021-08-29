@@ -18,5 +18,3 @@ let lastIndex = string.index(before: string.endIndex)
 print(string[secondIndex])
 print(string[thirdIndex])
 print(string[lastIndex])
-
-

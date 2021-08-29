@@ -8,19 +8,19 @@ var str = "Hello, playground"
 
 class Trie {
     class TrieNode {
-          var isWord = false
-          var children = [Character: TrieNode]()
-          
-          func insert(character: Character) {
-              if children[character] == nil {
-                  children[character] = TrieNode()
-              }
-          }
-          
-          func node(for character: Character) -> TrieNode? {
-              return children[character]
-          }
-      }
-    
+        var isWord = false
+        var children = [Character: TrieNode]()
+
+        func insert(character: Character) {
+            if children[character] == nil {
+                children[character] = TrieNode()
+            }
+        }
+
+        func node(for character: Character) -> TrieNode? {
+            return children[character]
+        }
+    }
+
     let root = TrieNode()
 }

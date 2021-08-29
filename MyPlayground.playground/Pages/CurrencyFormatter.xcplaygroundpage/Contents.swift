@@ -2,16 +2,18 @@ import Foundation
 
 struct DefaultCurrencyFormatter {
     private let formatter: NumberFormatter
-    
-    init(locale: Locale = Locale(identifier: "en_AU")) {
+
+    init(
+        locale: Locale = Locale(identifier: "en_AU")
+    ) {
         formatter = NumberFormatter()
         formatter.locale = locale
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .currency
     }
-    
+
     func formatCurrency(string: String) -> String? {
-        
+
         guard let decimal = Decimal(string: string) else {
             return nil
         }
