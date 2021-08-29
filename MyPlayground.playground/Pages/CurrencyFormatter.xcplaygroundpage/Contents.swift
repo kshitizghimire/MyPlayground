@@ -19,6 +19,6 @@ struct DefaultCurrencyFormatter {
     }
 }
 
-let amount = "12888889988777777.313"
+let amount = "-12888889988777777.313"
 let formatter = DefaultCurrencyFormatter()
 formatter.formatCurrency(string: amount)

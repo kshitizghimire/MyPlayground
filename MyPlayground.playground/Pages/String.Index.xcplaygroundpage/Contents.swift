@@ -4,6 +4,9 @@ import Foundation
 
 let string = "a👨‍👩‍👧‍👦bcd"
 
+let distance = string.distance(from: string.startIndex, to: string.endIndex)
+print(distance)
+
 for index in string.indices {
     print("Character: \(string[index])")
 }

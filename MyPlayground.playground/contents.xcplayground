@@ -37,12 +37,12 @@
         <page name='RegularExpression'/>
         <page name='Rethrows'/>
         <page name='Sequence.CountDown'/>
-        <page name='Sequence'/>
-        <page name='Set'/>
+        <page name='Sequence.Map'/>
         <page name='String.Index'/>
         <page name='String.Join.Split'/>
+        <page name='String.Search.Pattern'/>
         <page name='String'/>
-        <page name='String+Range'/>
+        <page name='String+Regex'/>
         <page name='StringCompare'/>
         <page name='SubStrings'/>
         <page name='SwiftVersion'/>
@@ -55,7 +55,6 @@
         <page name='UIView.hitTest'/>
         <page name='Unicode'/>
         <page name='UnsafeSwift'/>
-        <page name='String.Search.Pattern'/>
         <page name='URLSession'/>
         <page name='URLSession+Throw'/>
     </pages>

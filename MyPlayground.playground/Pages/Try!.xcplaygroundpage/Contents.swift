@@ -1,20 +1,12 @@
 
-import UIKit
+import Foundation
 
-let view1 = UIView()
-
-let view2 = UIView()
-
-var set = Set<NSObject>()
-set.insert(view1)
-set.insert(view2)
-print(view1.hash)
-
-class Foo: NSObject {
-    
-}
-
-let foo1 = Foo()
-
-set.insert(foo1)
-print(set)
+let dateFormatter = DateFormatter()
+dateFormatter.dateStyle = .medium
+dateFormatter.timeStyle = .none
+ 
+let date = Date(timeIntervalSinceReferenceDate: 118800)
+ 
+// US English Locale (en_US)
+dateFormatter.locale = Locale(identifier: "en_AU")
+print(dateFormatter.string(from: date))
