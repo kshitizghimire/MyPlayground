@@ -1,8 +1,6 @@
-//: [Previous](@previous)
-
 import Foundation
 
-class CancellableDispatchAfter {
+final class CancellableDispatchAfter {
     var cancel: Bool = false
     let dispathcQueue: DispatchQueue
 
@@ -12,20 +10,22 @@ class CancellableDispatchAfter {
         self.dispathcQueue = dispathcQueue
     }
 
-    func dispatchAfter(after: Int, closure: @escaping () -> Void) {
-        dispathcQueue.asyncAfter(deadline: .now() + .seconds(after)) {
+    func dispatchAfter(deadline: DispatchTime, work: @escaping () -> Void) {
+        dispathcQueue.asyncAfter(deadline: deadline) {
             if !self.cancel {
-                closure()
-            }
-            else {
-                print("cancelled")
+                work()
             }
         }
     }
 }
 
-let cancellable = CancellableDispatchAfter(dispathcQueue: DispatchQueue.main)
-cancellable.dispatchAfter(after: 3) {
-    print("abc")
+let cancel = CancellableDispatchAfter(dispathcQueue: DispatchQueue.main)
+cancel.dispatchAfter(deadline: .now() + .seconds(3)) {
+    print("cancelled")
 }
-cancellable.cancel = true
+cancel.cancel = true
+
+let execute = CancellableDispatchAfter(dispathcQueue: DispatchQueue.main)
+execute.dispatchAfter(deadline: .now() + .seconds(3)) {
+    print("executed")
+}
