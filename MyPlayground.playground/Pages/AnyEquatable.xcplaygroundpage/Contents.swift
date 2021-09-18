@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import Foundation
 
 public struct AnyEquatable: Equatable {

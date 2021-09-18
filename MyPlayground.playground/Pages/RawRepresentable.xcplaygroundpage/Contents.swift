@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import Foundation
 
 enum Foo: RawRepresentable {

@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import Foundation
 
 let a = Optional<Int>.some(1)

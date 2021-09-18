@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import Foundation
 
 func strCompare(s1: String, s2: String) -> Bool {

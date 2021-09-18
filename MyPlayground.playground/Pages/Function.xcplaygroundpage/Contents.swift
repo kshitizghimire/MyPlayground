@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import Foundation
 
 func someFunction(left: Int, right: Int) {

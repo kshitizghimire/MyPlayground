@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import Foundation
 
 let operationQueue = OperationQueue()

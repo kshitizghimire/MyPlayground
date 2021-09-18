@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import Foundation
 
 let array = [2, 3, 4, 5, 6]

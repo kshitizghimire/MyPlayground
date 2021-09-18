@@ -1,5 +1,3 @@
-//: [Previous](@previous)
-
 import UIKit
 
 class UITableView2 {
