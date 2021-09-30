@@ -35,7 +35,6 @@ addAttribute(for: a)
 addAttribute(for: b)
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         let label = UILabel()
         label.numberOfLines = 0

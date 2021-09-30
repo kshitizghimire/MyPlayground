@@ -11,19 +11,18 @@ struct Person {
 
 let p = Person(name: "Alessandro")
 
-//if case "p" = p {
+// if case "p" = p {
 //     print("Alessandro")
-//}
+// }
 
 switch p {
-    case "Alessandro":
-        print("Alessandro")
-    case "abc":
-        print("abc")
+case "Alessandro":
+    print("Alessandro")
+case "abc":
+    print("abc")
 
-    default:
-        break
-
+default:
+    break
 }
 
 let a: [String] = []

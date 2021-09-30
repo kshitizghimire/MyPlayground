@@ -13,7 +13,6 @@ struct DefaultCurrencyFormatter {
     }
 
     func formatCurrency(string: String) -> String? {
-
         guard let decimal = Decimal(string: string) else {
             return nil
         }

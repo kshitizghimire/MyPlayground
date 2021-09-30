@@ -7,4 +7,4 @@ print(array)
 
 var array2 = ["so", "ad", "1a"]
 array2.sort { $0 < $1 }
-print(array2)  // orignal array changees
+print(array2) // orignal array changees

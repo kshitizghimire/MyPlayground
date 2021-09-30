@@ -13,7 +13,7 @@ struct RegularExpression {
         in string: String,
         options: NSRegularExpression.MatchingOptions = []
     ) -> [NSTextCheckingResult] {
-        return regex.matches(in: string, options: options, range: NSMakeRange(0, string.count))
+        regex.matches(in: string, options: options, range: NSMakeRange(0, string.count))
     }
 }
 
@@ -27,4 +27,4 @@ extension RegularExpression: ExpressibleByStringLiteral {
 }
 
 let regex: RegularExpression = "abc"
-print(regex.matches(in: "abc"))  // prints that match is found
+print(regex.matches(in: "abc")) // prints that match is found

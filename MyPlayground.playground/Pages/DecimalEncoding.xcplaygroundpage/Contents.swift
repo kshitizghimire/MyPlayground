@@ -16,9 +16,10 @@ struct Foo: Codable {
     private enum CodingKeys: String, CodingKey {
         case value
     }
+
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        let string = self.value.formattedAmount!
+        let string = value.formattedAmount!
         print(string)
         try container.encode(Decimal(string: string), forKey: .value)
     }
@@ -28,7 +29,7 @@ struct Foo: Codable {
     ) throws {
         print("decoder")
         let containter = try decoder.container(keyedBy: CodingKeys.self)
-        self.value = try containter.decode(Decimal.self, forKey: .value)
+        value = try containter.decode(Decimal.self, forKey: .value)
     }
 
     init(
@@ -70,11 +71,11 @@ let doubleXMLData = try plEncoder.encode(DoubleStruct())
 print(String(data: doubleXMLData, encoding: .utf8)!)
 
 var myDecimal: Decimal = 12.313
-print(myDecimal)  // 12.313000000000002048
+print(myDecimal) // 12.313000000000002048
 
 var result: Decimal = 0
 NSDecimalRound(&result, &myDecimal, 3, .down)
-print(result)  // 12.313
+print(result) // 12.313
 
 MemoryLayout.size(ofValue: result)
 MemoryLayout.size(ofValue: myDecimal)

@@ -34,8 +34,7 @@ final class MainQueueDispatchDecorator: Service {
 func guranteeMainThread(_ work: @escaping () -> Void) {
     if Thread.isMainThread {
         work()
-    }
-    else {
+    } else {
         DispatchQueue.main.async(execute: work)
     }
 }

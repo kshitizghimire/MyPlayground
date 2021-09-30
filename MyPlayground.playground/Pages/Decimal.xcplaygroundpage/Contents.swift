@@ -1,11 +1,11 @@
 import Foundation
 
 func decimalThroughString(from double: Double) -> Decimal {
-    return Decimal(string: "\(double)")!
+    Decimal(string: "\(double)")!
 }
 
 func decimalDirectly(from double: Double) -> Decimal {
-    return Decimal(double)
+    Decimal(double)
 }
 
 func randomDecimal() -> Decimal {
@@ -19,7 +19,7 @@ func randomDecimal() -> Decimal {
 
 var totalCorrectDirectly = 0
 var totalCorrectThroughString = 0
-for _ in 1...1000 {
+for _ in 1 ... 1000 {
     let decimal = randomDecimal()
     let double = (decimal as NSNumber).doubleValue
     let correctDirectly = decimalDirectly(from: double) == decimal
@@ -27,5 +27,6 @@ for _ in 1...1000 {
     totalCorrectDirectly += correctDirectly ? 1 : 0
     totalCorrectThroughString += correctThroughString ? 1 : 0
 }
-totalCorrectDirectly  // ~378
-totalCorrectThroughString  // 1000
+
+totalCorrectDirectly // ~378
+totalCorrectThroughString // 1000

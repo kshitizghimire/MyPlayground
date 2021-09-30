@@ -13,5 +13,4 @@ for i in TimeZone.knownTimeZoneIdentifiers {
     format.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     let dateString = format.string(from: currentDate)
     print(dateString)
-
 }

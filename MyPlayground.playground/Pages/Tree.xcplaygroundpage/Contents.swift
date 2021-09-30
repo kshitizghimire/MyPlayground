@@ -23,7 +23,7 @@ extension Node: CustomStringConvertible {
 
         // 4
         if !children.isEmpty {
-            text += " {" + children.map { $0.description }.joined(separator: ", ") + "} "
+            text += " {" + children.map(\.description).joined(separator: ", ") + "} "
         }
         return text
     }
@@ -89,4 +89,4 @@ extension Node where T: Equatable {
 beverages.search(value: "cocoa")
 // returns the "chai" node
 beverages.search(value: "chai")
-beverages.search(value: "1")  // returns nil
+beverages.search(value: "1") // returns nil

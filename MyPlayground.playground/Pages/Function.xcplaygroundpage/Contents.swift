@@ -11,9 +11,10 @@ f(2, 3)
 var diffrentFuncType: (() -> Void)?
 type(of: diffrentFuncType)
 
-let closure: (Int, Int) -> Int = { (a, b) -> Int in
-    return a + b
+let closure: (Int, Int) -> Int = { a, b -> Int in
+    a + b
 }
+
 closure(2, 4)
 
 type(of: closure)

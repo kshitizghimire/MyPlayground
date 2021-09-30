@@ -61,5 +61,7 @@
         <page name='URLSession+Combine'/>
         <page name='URLSession'/>
         <page name='URLSession+Throw'/>
+        <page name='UIButton.Action'/>
+        <page name='ClosureAsLoader'/>
     </pages>
 </playground>

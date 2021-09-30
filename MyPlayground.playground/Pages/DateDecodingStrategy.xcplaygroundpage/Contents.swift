@@ -5,7 +5,7 @@ struct Student: Codable {
     var joined: Date
 }
 
-//encode
+// encode
 let student = Student(name: "Student name", joined: Date())
 let encoder = JSONEncoder()
 encoder.outputFormatting = .prettyPrinted
@@ -13,14 +13,14 @@ encoder.dateEncodingStrategy = .secondsSince1970
 let data = try! encoder.encode(student)
 print(String(data: data, encoding: .utf8)!)
 
-//decode
+// decode
 
 let stubStudent = """
-    {
-    "name": "Name",
-    "joined": "03-23-1999"
-    }
-    """
+{
+"name": "Name",
+"joined": "03-23-1999"
+}
+"""
 
 let decoder = JSONDecoder()
 decoder.dateDecodingStrategy = .custom { decoder -> Date in
@@ -33,13 +33,11 @@ decoder.dateDecodingStrategy = .custom { decoder -> Date in
     dateFormatter.timeZone = TimeZone.current
 
     return dateFormatter.date(from: dateString)!
-
 }
 
 do {
     let student = try decoder.decode(Student.self, from: stubStudent.data(using: .utf8)!)
     print(student)
-}
-catch {
+} catch {
     print(error)
 }

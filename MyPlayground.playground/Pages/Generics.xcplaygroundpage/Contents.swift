@@ -23,11 +23,11 @@ class BAError: Codable, CustomStringConvertible, CustomDebugStringConvertible {
     }
 
     var description: String {
-        return "\(self.code)- \(self.errDescription)"
+        "\(code)- \(errDescription)"
     }
 
     var debugDescription: String {
-        return "Debug description:\(self.code)- \(self.errDescription)"
+        "Debug description:\(code)- \(errDescription)"
     }
 }
 

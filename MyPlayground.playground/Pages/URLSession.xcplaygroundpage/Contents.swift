@@ -21,15 +21,13 @@ let url = URL(string: "https://api.github.com/users/kshitizghimire")!
 let request = URLRequest(url: url)
 let session = URLSession(configuration: .default)
 
-let task = session.dataTask(with: request) { (data, response, error) in
+let task = session.dataTask(with: request) { data, _, _ in
     guard let data = data else { return }
     do {
         let decoder = JSONDecoder()
         let github = try decoder.decode(Github.self, from: data)
         print(github)
-
-    }
-    catch let err {
+    } catch let err {
         print("Err", err)
     }
 }

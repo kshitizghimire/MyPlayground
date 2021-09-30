@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         urlComponent.path = "/users/kshitizghimire"
         return urlComponent
     }()
+
     var cancellable: AnyCancellable?
 
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
             .tryMap { element -> Data in
                 //                print(element.data)
                 guard let httpResponse = element.response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200
+                      httpResponse.statusCode == 200
                 else {
                     throw URLError(.badServerResponse)
                 }
@@ -35,12 +36,11 @@ class ViewController: UIViewController {
             }
             .decode(type: Github.self, decoder: JSONDecoder())
 
-        cancellable = publisher.sink { complition in
+        cancellable = publisher.sink { _ in
             //            print(complition)
         } receiveValue: { github in
             print(github)
         }
-
     }
 }
 

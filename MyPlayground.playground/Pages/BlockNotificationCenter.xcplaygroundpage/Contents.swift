@@ -1,8 +1,7 @@
 import Foundation
 
 final class BlockNotificationCenter {
-
-    var action: (() -> Void)? = nil
+    var action: (() -> Void)?
 
     func addNotification(name: Notification.Name) {
         NotificationCenter.default.addObserver(
@@ -23,6 +22,7 @@ let blockN = BlockNotificationCenter()
 blockN.action = {
     print("here")
 }
+
 blockN.addNotification(name: Notification.Name(rawValue: "Foo"))
 
 NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "Foo")))

@@ -45,14 +45,12 @@ extension String {
 
             // Does the current character match the last character from the pattern?
             if c == lastChar {
-
                 // There is a possible match. Do a brute-force search backwards.
                 if let k = backwards() { return k }
 
                 // If no match, we can only safely skip one character ahead.
                 i = index(after: i)
-            }
-            else {
+            } else {
                 // The characters are not equal, so skip ahead. The amount to skip is
                 // determined by the skip table. If the character is not present in the
                 // pattern, we can skip ahead by the full pattern length. However, if
@@ -60,7 +58,7 @@ extension String {
                 // ahead and we can't skip as far.
                 i =
                     index(i, offsetBy: skipTable[c] ?? patternLength, limitedBy: endIndex)
-                    ?? endIndex
+                        ?? endIndex
             }
         }
         return nil

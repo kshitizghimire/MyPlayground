@@ -23,6 +23,7 @@ let cancel = CancellableDispatchAfter(dispathcQueue: DispatchQueue.main)
 cancel.dispatchAfter(deadline: .now() + .seconds(3)) {
     print("cancelled")
 }
+
 cancel.cancel = true
 
 let execute = CancellableDispatchAfter(dispathcQueue: DispatchQueue.main)

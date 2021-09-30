@@ -3,8 +3,8 @@ import Foundation
 enum Category: Hashable {
     case dairy
     case vegetables
-
 }
+
 struct Product {
     var name: String
     var category: Category
@@ -31,17 +31,15 @@ extension ProductCollection: Collection {
     typealias Element = DictionaryType.Element
 
     // The upper and lower bounds of the collection, used in iterations
-    var startIndex: Index { return products.startIndex }
-    var endIndex: Index { return products.endIndex }
+    var startIndex: Index { products.startIndex }
+    var endIndex: Index { products.endIndex }
 
     // Required subscript, based on a dictionary index
-    subscript(index: Index) -> Iterator.Element {
-        get { return products[index] }
-    }
+    subscript(index: Index) -> Iterator.Element { products[index] }
 
     // Method that returns the next index when iterating
     func index(after i: Index) -> Index {
-        return products.index(after: i)
+        products.index(after: i)
     }
 }
 

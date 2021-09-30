@@ -7,14 +7,13 @@ protocol ViewModelProtocol {
 class MockViewModel: ViewModelProtocol {
     var addFruitCalled = 0
     var didCallAddFruit: ((Int) -> Void)?
-    func addFruit(_ text: String) {
+    func addFruit(_: String) {
         addFruitCalled += 1
         didCallAddFruit?(addFruitCalled)
     }
 }
 
 final class ViewModelTests: XCTestCase {
-
     func testAction() {
         let viewModel = MockViewModel()
 

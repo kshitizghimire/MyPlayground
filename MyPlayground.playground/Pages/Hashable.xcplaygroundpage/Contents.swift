@@ -2,7 +2,7 @@ import Foundation
 
 class TreeNode: Hashable {
     static func == (lhs: TreeNode, rhs: TreeNode) -> Bool {
-        return lhs.val == rhs.val
+        lhs.val == rhs.val
             && lhs.left == rhs.left
             && lhs.right == rhs.right
     }
@@ -12,6 +12,7 @@ class TreeNode: Hashable {
         //        hasher.combine(left)
         //        hasher.combine(right)
     }
+
     var val: Int
     var left: TreeNode?
     var right: TreeNode?
@@ -19,8 +20,8 @@ class TreeNode: Hashable {
         _ val: Int
     ) {
         self.val = val
-        self.left = nil
-        self.right = nil
+        left = nil
+        right = nil
     }
 }
 

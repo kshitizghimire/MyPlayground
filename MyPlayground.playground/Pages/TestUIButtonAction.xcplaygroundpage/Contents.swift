@@ -9,6 +9,7 @@ final class ViewController: UIViewController {
     }()
 
     // MARK: - Actions
+
     var didTapAdd: (() -> Void)?
     @objc private func tapAddButton() {
         didTapAdd?()
@@ -16,7 +17,6 @@ final class ViewController: UIViewController {
 }
 
 final class ViewControllerTests: XCTestCase {
-
     func testAction() {
         let expectation = expectation(description: #function)
         let viewController = ViewController()
@@ -27,7 +27,6 @@ final class ViewControllerTests: XCTestCase {
         viewController.addButton.sendActions(for: .touchUpInside)
 
         wait(for: [expectation], timeout: 0.1)
-
     }
 }
 

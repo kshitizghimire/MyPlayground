@@ -9,24 +9,25 @@ struct MyCollection: Collection {
         self.storage = storage
         count = storage.count - 1
     }
+
     subscript(position: Int) -> Int {
-        get {
-            return storage[position]
-        }
+        storage[position]
     }
+
     var startIndex: Int {
         storage.startIndex
     }
+
     var endIndex: Int {
         storage.endIndex
     }
+
     func index(after i: Int) -> Int {
-        return storage.index(after: i)
+        storage.index(after: i)
     }
 }
 
 extension MyCollection: IteratorProtocol, Sequence {
-
     mutating func next() -> Int? {
         if count < 0 {
             return nil
@@ -38,7 +39,7 @@ extension MyCollection: IteratorProtocol, Sequence {
     }
 }
 
-let newCol = MyCollection(storage: [123490])
+let newCol = MyCollection(storage: [123_490])
 
 for i in newCol {
     print(i)

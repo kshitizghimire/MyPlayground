@@ -4,12 +4,12 @@ struct Foo {
     var string: String
 
     let closure: () throws -> Data = {
-        return Data()
+        Data()
     }
 
     init(
         string: String,
-        closure: () throws -> Data
+        closure _: () throws -> Data
     ) rethrows {
         self.string = string
     }

@@ -20,9 +20,7 @@ do {
     let jsonData = try jsonEncoder.encode(upMovie)
     let jsonString = String(data: jsonData, encoding: .utf8)
     print("JSON String : " + jsonString!)
-}
-catch {
-}
+} catch {}
 
 let jsonString =
     "{\"name\":\"Up\",\"moviesGenere\":[\"comedy\",\"adventure\",\"animation\"],\"rating\":4}"
@@ -34,6 +32,4 @@ do {
     let upMovie = try jsonDecoder.decode(Movie.self, from: jsonData!)
     print("Name : \(upMovie.name)")
     print("Rating : \(upMovie.rating)")
-}
-catch {
-}
+} catch {}

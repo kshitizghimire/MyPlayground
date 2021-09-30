@@ -1,10 +1,10 @@
 import Foundation
 
 let testString = """
-    The cat
-    sat on
-    the mat
-    """
+The cat
+sat on
+the mat
+"""
 
 public struct RegularExpression: ExpressibleByStringLiteral {
     public let pattern: String
@@ -15,9 +15,8 @@ public struct RegularExpression: ExpressibleByStringLiteral {
     ) {
         self.pattern = pattern
         do {
-            self.regularExpression = try NSRegularExpression(pattern: pattern)
-        }
-        catch {
+            regularExpression = try NSRegularExpression(pattern: pattern)
+        } catch {
             preconditionFailure("Illegal regular expression pattern: \(pattern).")
         }
     }
@@ -26,11 +25,10 @@ public struct RegularExpression: ExpressibleByStringLiteral {
         stringLiteral value: String
     ) {
         self.init(value)
-
     }
 
     public func matches(_ string: String) -> Bool {
-        return self.regularExpression.firstMatch(
+        regularExpression.firstMatch(
             in: string,
             options: [],
             range: NSRange(string.startIndex..., in: string)

@@ -16,7 +16,7 @@ class Trie {
         }
 
         func node(for character: Character) -> TrieNode? {
-            return children[character]
+            children[character]
         }
     }
 

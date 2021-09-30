@@ -29,16 +29,15 @@ let s = " abcd"
 
 s[s.index(s.startIndex, offsetBy: 2)]
 
-for alphabet in Unicode.Scalar.init("A").value...Unicode.Scalar("Z").value {
+for alphabet in Unicode.Scalar("A").value ... Unicode.Scalar("Z").value {
     print(alphabet, Int(Unicode.Scalar(alphabet)!.value), Unicode.Scalar(alphabet)!)
 
-    let c = Character.init(Unicode.Scalar(alphabet)!)
+    let c = Character(Unicode.Scalar(alphabet)!)
     print(c, type(of: c))
-    let s = String.init(Unicode.Scalar(alphabet)!)
+    let s = String(Unicode.Scalar(alphabet)!)
     print(s, type(of: s))
 }
 
-for c in Unicode.Scalar("A").value...Unicode.Scalar("Z").value {
-
-    print(Unicode.Scalar.init(c)!)
+for c in Unicode.Scalar("A").value ... Unicode.Scalar("Z").value {
+    print(Unicode.Scalar(c)!)
 }

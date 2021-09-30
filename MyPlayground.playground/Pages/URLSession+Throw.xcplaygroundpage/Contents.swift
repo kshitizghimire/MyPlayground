@@ -3,6 +3,7 @@ import Foundation
 enum FetchError: Error {
     case serviceUnavailable
 }
+
 struct Github: Codable {
     let name: String
 }
@@ -14,8 +15,8 @@ func fetch() throws -> Github {
     URLSession.shared
         .dataTask(with: URL(string: "https://api.github.com/users/kshitizghimire")!) {
             data,
-            request,
-            error in
+                _,
+                error in
             completionHandler = (data, error)
             dispatchGroup.leave()
         }
@@ -33,7 +34,6 @@ func fetch() throws -> Github {
 do {
     let github = try fetch()
     print(github.name)
-}
-catch {
+} catch {
     print(error)
 }

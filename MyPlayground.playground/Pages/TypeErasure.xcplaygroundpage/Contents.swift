@@ -14,8 +14,9 @@ extension String: Cachable {
         }
         return string
     }
+
     func encode() -> Data? {
-        return data(using: .utf8)
+        data(using: .utf8)
     }
 }
 
@@ -28,11 +29,13 @@ class AnyCachable<T>: Cachable {
         _decode = cachable.decode
         _encode = cachable.encode
     }
+
     func decode(_ data: Data) -> T? {
-        return _decode(data)
+        _decode(data)
     }
+
     func encode() -> Data? {
-        return _encode()
+        _encode()
     }
 }
 
@@ -46,11 +49,11 @@ class AnyCachable2<C: Cachable>: Cachable {
     }
 
     func encode() -> Data? {
-        return self.cachable.encode()
+        cachable.encode()
     }
 
     func decode(_ data: Data) -> C.CacheType? {
-        return self.cachable.decode(data)
+        cachable.decode(data)
     }
 }
 

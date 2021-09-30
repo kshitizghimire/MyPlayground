@@ -8,16 +8,16 @@ public struct AnyEquatable: Equatable {
         _ value: E
     ) {
         self.value = value
-        self.equals = { ($0 as? E) == value }
+        equals = { ($0 as? E) == value }
     }
 
     public static func == (lhs: AnyEquatable, rhs: AnyEquatable) -> Bool {
-        return lhs.equals(rhs.value) || rhs.equals(lhs.value)
+        lhs.equals(rhs.value) || rhs.equals(lhs.value)
     }
 }
 
 func foocompare(first: AnyEquatable, second: AnyEquatable) -> Bool {
-    return first == second
+    first == second
 }
 
 let a = AnyEquatable(2)
