@@ -1,17 +1,17 @@
 import UIKit
 
 struct Foo {}
-protocol load {
-    func l(completion: @escaping ([Foo]) -> Void)
+protocol Loading {
+    func load(completion: @escaping ([Foo]) -> Void)
 }
 
 typealias Loader = (@escaping ([Foo]) -> Void) -> Void
 
 class Viewcontroller: UIViewController {
-    let load: Loader
+    let loader: Loader
 
-    init(load: @escaping Loader) {
-        self.load = load
+    init(loader: @escaping Loader) {
+        self.loader = loader
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -21,7 +21,7 @@ class Viewcontroller: UIViewController {
     }
 
     override func viewDidLoad() {
-        load { foos in
+        loader { foos in
             foos.forEach { foo in
                 print(foo)
             }
@@ -30,13 +30,16 @@ class Viewcontroller: UIViewController {
 }
 
 let vc = Viewcontroller { complition in
-    complition(
-        [
-            Foo(),
-            Foo(),
-            Foo(),
-        ]
-    )
+    complition([Foo(), Foo(), Foo()])
 }
 
 vc.loadViewIfNeeded()
+
+struct LoaderAsType: Loading {
+    func load(completion: @escaping ([Foo]) -> Void) {
+        completion([Foo(), Foo(), Foo(), Foo(), Foo(), Foo()])
+    }
+}
+
+let vcWithLoaderAsType = Viewcontroller(loader: LoaderAsType().load)
+vcWithLoaderAsType.loadViewIfNeeded()
