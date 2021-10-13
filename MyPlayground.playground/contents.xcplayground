@@ -63,5 +63,6 @@
         <page name='URLSession'/>
         <page name='URLSession+Combine'/>
         <page name='URLSession+Throw'/>
+        <page name='Try'/>
     </pages>
 </playground>

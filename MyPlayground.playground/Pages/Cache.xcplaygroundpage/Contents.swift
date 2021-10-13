@@ -62,10 +62,7 @@ private extension Cache {
     }
 }
 
-
 var cache = Cache<String, String>()
 cache["abc"] = "aaa"
 print(cache["abc"])
 print(cache["foo"])
-
-
