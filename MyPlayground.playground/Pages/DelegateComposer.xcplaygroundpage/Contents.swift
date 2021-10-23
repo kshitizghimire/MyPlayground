@@ -21,7 +21,7 @@ class FooDelegateImpl2: FooDelegate {
     func failure() {}
 }
 
-class FooDelegateComposition: FooDelegate {
+class FooDelegateComposer: FooDelegate {
     private var delegates: [FooDelegate] = []
 
     func addDelegate(_ delegate: FooDelegate) {
@@ -52,9 +52,9 @@ class FooClass {
 //
 let foo = FooClass()
 
-let fooDelegateComposition = FooDelegateComposition()
-fooDelegateComposition.addDelegate(FooDelegateImpl1())
-fooDelegateComposition.addDelegate(FooDelegateImpl2())
+let fooDelegateComposer = FooDelegateComposer()
+fooDelegateComposer.addDelegate(FooDelegateImpl1())
+fooDelegateComposer.addDelegate(FooDelegateImpl2())
 
-foo.delegate = fooDelegateComposition
+foo.delegate = fooDelegateComposer
 foo.success()
