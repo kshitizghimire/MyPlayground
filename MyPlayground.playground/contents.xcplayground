@@ -61,9 +61,11 @@
         <page name='UIView.hitTest'/>
         <page name='Unicode'/>
         <page name='UnsafeSwift'/>
-        <page name='DataRace'/>
+        <page name='DataRaceSyncronisation'/>
         <page name='URLSession'/>
         <page name='URLSession+Combine'/>
         <page name='URLSession+Throw'/>
+        <page name='Caching'/>
+        <page name='MeasurmentFormatter'/>
     </pages>
 </playground>
