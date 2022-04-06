@@ -7,6 +7,7 @@
         <page name='BinarySearchTree'/>
         <page name='BlockNotificationCenter'/>
         <page name='Cache'/>
+        <page name='Caching'/>
         <page name='CancellableDispatchAfter'/>
         <page name='ClosureAsLoader'/>
         <page name='Codable'/>
@@ -14,6 +15,7 @@
         <page name='Collection'/>
         <page name='ConvertBinaryToDecimal'/>
         <page name='CurrencyFormatter'/>
+        <page name='DataRaceSyncronisation'/>
         <page name='DateDecodingStrategy'/>
         <page name='Decimal'/>
         <page name='DecimalEncoding'/>
@@ -27,6 +29,7 @@
         <page name='Hashable'/>
         <page name='Heap'/>
         <page name='JSONSerializer'/>
+        <page name='MeasurementFormatter'/>
         <page name='MyCollection'/>
         <page name='NetworkError'/>
         <page name='NSAttributedString'/>
@@ -61,11 +64,10 @@
         <page name='UIView.hitTest'/>
         <page name='Unicode'/>
         <page name='UnsafeSwift'/>
-        <page name='DataRaceSyncronisation'/>
+        <page name='Combine duplicate work'/>
         <page name='URLSession'/>
         <page name='URLSession+Combine'/>
         <page name='URLSession+Throw'/>
-        <page name='Caching'/>
-        <page name='MeasurmentFormatter'/>
+        <page name='DistinctOperator'/>
     </pages>
 </playground>
